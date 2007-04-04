@@ -4,8 +4,8 @@
 /*
  * \file L1TGT.h
  *
- * $Date: 2007/02/02 20:56:20 $
- * $Revision: 1.00 $
+ * $Date: 2007/02/22 19:43:52 $
+ * $Revision: 1.2 $
  * \author J. Berryhill
  *
 */
@@ -28,8 +28,11 @@
 #include "FWCore/ServiceRegistry/interface/Service.h"
 #include "FWCore/MessageLogger/interface/MessageLogger.h"
 
+#include "DataFormats/L1GlobalMuonTrigger/interface/L1MuRegionalCand.h"
+
 #include "DataFormats/L1GlobalTrigger/interface/L1GlobalTriggerReadoutSetup.h"
 #include "DataFormats/L1GlobalTrigger/interface/L1GlobalTriggerReadoutRecord.h"
+#include "DataFormats/L1GlobalTrigger/interface/L1GlobalTriggerReadoutSetupFwd.h"
 
 #include <iostream>
 #include <fstream>
@@ -73,7 +76,7 @@ private:
   bool verbose_;
   bool monitorDaemon_;
   ofstream logFile_;
-
+  edm::InputTag gtSource_;
 };
 
 #endif
