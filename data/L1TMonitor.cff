@@ -1,0 +1,4 @@
+
+include "DQM/L1TMonitor/data/L1TGT.cff"
+
+sequence l1tmonitor = {l1tgtseq}
