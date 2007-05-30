@@ -1,0 +1,9 @@
+
+       module l1trpctpg = L1TRPCTPG{
+          untracked bool verbose = true
+          untracked bool MonitorDaemon = true
+          untracked bool DaqMonitorBEInterface = true
+          untracked string outputFile ="./L1TDQM.root"
+          InputTag rpctpgSource = L1RPCTPGUnpack::DQM
+        }
+

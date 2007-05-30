@@ -1,0 +1,9 @@
+
+       module l1tgct = L1TGCT{
+          untracked bool verbose = true
+          untracked bool MonitorDaemon = true
+          untracked bool DaqMonitorBEInterface = true
+          untracked string outputFile ="./L1TDQM.root"
+          InputTag gctSource = L1GCTUnpack::DQM
+        }
+

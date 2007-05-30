@@ -1,0 +1,9 @@
+
+       module l1tcsctf = L1TCSCTF{
+          untracked bool verbose = true
+          untracked bool MonitorDaemon = true
+          untracked bool DaqMonitorBEInterface = true
+          untracked string outputFile ="./L1TDQM.root"
+          InputTag csctfSource = L1CSCTFUnpack::DQM
+        }
+

@@ -1,0 +1,9 @@
+
+       module l1trct = L1TRCT{
+          untracked bool verbose = true
+          untracked bool MonitorDaemon = true
+          untracked bool DaqMonitorBEInterface = true
+          untracked string outputFile ="./L1TDQM.root"
+          InputTag rctSource = L1RCTUnpack::DQM
+        }
+

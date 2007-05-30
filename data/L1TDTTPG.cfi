@@ -1,0 +1,9 @@
+
+       module l1tdttpg = L1TDTTPG{
+          untracked bool verbose = true
+          untracked bool MonitorDaemon = true
+          untracked bool DaqMonitorBEInterface = true
+          untracked string outputFile ="./L1TDQM.root"
+          InputTag dttpgSource = L1DTTPGUnpack::DQM
+        }
+
