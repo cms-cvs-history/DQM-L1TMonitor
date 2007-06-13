@@ -1,0 +1,9 @@
+      module l1tcompare = L1TCompare {
+         untracked bool MonitorDaemon = true
+         untracked bool DaqMonitorBEInterface = true
+         untracked bool verbose = true
+         untracked string outputFile ="./L1TDQM.root"
+         InputTag gctSource = L1GctEmuDigis
+         InputTag ecalTpgSource = ecalTriggerPrimitiveDigis
+	 InputTag rctSource = L1RCTRegionSumsEmCands
+      }      
