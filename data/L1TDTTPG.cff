@@ -1,5 +1,12 @@
+//        module l1tdttpgpack = DTTFFEDSim{
+//        }
+
+        module l1tdttpgunpack = DTTFFEDReader{
+        }
+
+
 
 include "DQM/L1TMonitor/data/L1TDTTPG.cfi"
 
 
-sequence l1tdttpgseq = {l1tdttpg}
+sequence l1tdttpgseq = {l1tdttpgunpack,l1tdttpg}

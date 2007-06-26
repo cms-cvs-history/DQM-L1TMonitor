@@ -1,5 +1,5 @@
 
-include "DQM/L1TMonitor/data/L1THCALTPG.cff"
+//include "DQM/L1TMonitor/data/L1THCALTPG.cff"
 
 //include "DQM/L1TMonitor/data/L1TECALTPG.cff"
 
@@ -15,16 +15,16 @@ include "DQM/L1TMonitor/data/L1THCALTPG.cff"
 
 //include "DQM/L1TMonitor/data/L1TCSCTF.cff"
 
-//include "DQM/L1TMonitor/data/L1TDTTPG.cff"
+include "DQM/L1TMonitor/data/L1TDTTPG.cff"
 
 //include "DQM/L1TMonitor/data/L1TDTTF.cff"
 
 //include "DQM/L1TMonitor/data/L1TGMT.cff"
 
-include "DQM/L1TMonitor/data/L1TGT.cff"
+//include "DQM/L1TMonitor/data/L1TGT.cff"
 
 sequence l1tmonitor = {
-l1thcaltpgseq,
+//l1thcaltpgseq,
 //l1tecaltpgseq, 
 //l1trctseq, 
 //l1tgctseq, 
@@ -32,8 +32,8 @@ l1thcaltpgseq,
 //l1trpctfseq, 
 //l1tcsctpgseq, 
 //l1tcsctfseq, 
-//l1tdttpgseq, 
+l1tdttpgseq 
 //l1tdttfseq, 
 //l1tgmtseq, 
-l1tgtseq
+//l1tgtseq
 }
