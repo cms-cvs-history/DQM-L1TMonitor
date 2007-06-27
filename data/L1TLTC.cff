@@ -1,5 +1,6 @@
 
+module l1tltcunpack = LTCRawToDigi{}
+
 include "DQM/L1TMonitor/data/L1TLTC.cfi"
 
-
-sequence l1tltcseq = {l1tltc}
+sequence l1tltcseq = {l1tltcunpack, l1tltc}
