@@ -21,9 +21,9 @@ include "DQM/L1TMonitor/data/L1TDTTPG.cff"
 
 //include "DQM/L1TMonitor/data/L1TDTTF.cff"
 
-//include "DQM/L1TMonitor/data/L1TGMT.cff"
+include "DQM/L1TMonitor/data/L1TGMT.cff"
 
-//include "DQM/L1TMonitor/data/L1TGT.cff"
+include "DQM/L1TMonitor/data/L1TGT.cff"
 
 sequence l1tmonitor = {
 l1tltcseq,
@@ -35,8 +35,8 @@ l1tltcseq,
 //l1trpctfseq, 
 //l1tcsctpgseq, 
 //l1tcsctfseq, 
-l1tdttpgseq 
+l1tdttpgseq, 
 //l1tdttfseq, 
-//l1tgmtseq, 
-//l1tgtseq
+l1tgtseq, 
+l1tgmtseq
 }
