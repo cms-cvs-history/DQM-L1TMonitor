@@ -1,4 +1,4 @@
-
+include "L1TriggerConfig/L1ScalesProducers/data/L1MuTriggerScalesConfig.cff"
 
 include "EventFilter/L1GlobalTriggerRawToDigi/data/l1GtUnpack.cfi"
    // input tag
