@@ -1,6 +1,6 @@
 
        module l1tgt = L1TGT{
-          untracked bool verbose = true
+          untracked bool verbose = false
           untracked bool MonitorDaemon = true
           untracked bool DaqMonitorBEInterface = true
           untracked string outputFile ="./L1TDQM.root"
