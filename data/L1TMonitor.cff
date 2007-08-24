@@ -1,4 +1,6 @@
 
+include "DQM/L1TMonitor/data/L1TCompare.cff"
+
 include "DQM/L1TMonitor/data/L1TLTC.cff"
 
 //include "DQM/L1TMonitor/data/L1THCALTPG.cff"

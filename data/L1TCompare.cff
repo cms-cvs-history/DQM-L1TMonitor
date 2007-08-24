@@ -1,0 +1,4 @@
+
+include "DQM/L1TMonitor/data/L1TCompare.cfi"
+
+sequence l1tcompseq = { l1tcompare }
