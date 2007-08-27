@@ -21,7 +21,7 @@ include "DQM/L1TMonitor/data/L1TLTC.cff"
 
 include "DQM/L1TMonitor/data/L1TDTTPG.cff"
 
-//include "DQM/L1TMonitor/data/L1TDTTF.cff"
+include "DQM/L1TMonitor/data/L1TDTTF.cff"
 
 include "DQM/L1TMonitor/data/L1TGMT.cff"
 
@@ -38,7 +38,7 @@ l1tltcseq,
 //l1tcsctpgseq, 
 //l1tcsctfseq, 
 l1tdttpgseq, 
-//l1tdttfseq, 
 l1tgtseq, 
-l1tgmtseq
+l1tgmtseq,
+l1tdttfseq 
 }
