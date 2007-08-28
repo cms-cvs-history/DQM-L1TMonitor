@@ -9,4 +9,4 @@
 include "DQM/L1TMonitor/data/L1TDTTPG.cfi"
 
 
-sequence l1tdttpgseq = {l1tdttpgunpack,l1tdttpg}
+path l1tdttpgpath = {l1tdttpgunpack,l1tdttpg}

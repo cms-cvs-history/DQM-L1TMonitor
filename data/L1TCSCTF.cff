@@ -1,5 +1,4 @@
-
 include "DQM/L1TMonitor/data/L1TCSCTF.cfi"
 
 
-sequence l1tcsctfseq = {l1tcsctf}
+path l1tcsctfpath = {l1GtUnpack, l1tcsctf}

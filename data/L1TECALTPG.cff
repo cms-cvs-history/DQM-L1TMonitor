@@ -2,4 +2,4 @@
 include "DQM/L1TMonitor/data/L1TECALTPG.cfi"
 
 
-sequence l1tecaltpgseq = {l1tecaltpg}
+path l1tecaltpgpath = {l1tecaltpg}
