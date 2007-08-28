@@ -2,9 +2,9 @@
 include "DQM/L1TMonitor/data/L1TLTC.cff"
 
 //include "DQM/L1TMonitor/data/L1THCALTPG.cff"
-//include "DQM/L1TMonitor/data/L1TECALTPG.cff"
+include "DQM/L1TMonitor/data/L1TECALTPG.cff"
 
-//include "DQM/L1TMonitor/data/L1TGCT_readout.cff"
+include "DQM/L1TMonitor/data/L1TGCT_readout.cff"
 //include "DQM/L1TMonitor/data/L1TRCT.cff"
 //include "DQM/L1TMonitor/data/L1TGCT.cff"
 

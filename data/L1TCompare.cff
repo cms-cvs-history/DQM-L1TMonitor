@@ -1,4 +1,8 @@
 
 include "DQM/L1TMonitor/data/L1TCompare.cfi"
+# relevant FED is 745
+include "DQM/L1TMonitor/data/L1TGCT_unpack.cff"
+include "DQM/L1TMonitor/data/L1TECALTPG_unpck.cff"
 
-path l1tcomppath = { l1tcompare }
+
+path l1tcomppath = { l1GctHwDigis, ecalEBunpacker, l1tcompare }

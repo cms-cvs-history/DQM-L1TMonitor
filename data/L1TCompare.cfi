@@ -3,7 +3,7 @@
          untracked bool DaqMonitorBEInterface = true
          untracked bool verbose = true
          untracked string outputFile ="./L1TDQM.root"
-         InputTag gctSource = L1GctEmuDigis
+         InputTag gctSource = l1GctHwDigis::DQM
          InputTag ecalTpgSource = ecalTriggerPrimitiveDigis
-	 InputTag rctSource = L1RCTRegionSumsEmCands
+	 InputTag rctSource = l1GctHwDigis::DQM
       }      
