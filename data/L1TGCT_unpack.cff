@@ -1,0 +1,6 @@
+
+# relevant FED is 745
+# if the default source gets updated then we can get rid of this
+# cff file and just point at the original one
+include "EventFilter/GctRawToDigi/data/l1GctHwDigis.cfi"
+replace l1GctHwDigis.inputLabel = source
