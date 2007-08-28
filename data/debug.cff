@@ -1,0 +1,13 @@
+    module d0 = EventContentAnalyzer {
+      untracked bool verbose = false
+    }
+
+    module d1 = DumpFEDRawDataProduct { 
+      #untracked vint32 feds = { 745 }
+      untracked bool dumpPayload = false
+    }
+
+    path debugpath = { 
+      d0 &
+      d1
+    }
