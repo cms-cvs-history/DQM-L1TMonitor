@@ -1,0 +1,22 @@
+
+include "Geometry/EcalMapping/data/EcalMapping.cfi"
+ es_source eegeom = EmptyESSource {
+    string recordName = "EcalMappingRcd"
+    vuint32 firstValid = { 0 }
+    bool iovIsRunNotTime = false
+ }
+
+module ecalEBunpacker = EcalRawToDigiDev {
+   # Default is true
+   untracked bool eventPut        = true
+   untracked bool memUnpacking    = false
+   untracked bool headerUnpacking = false
+   untracked bool srpUnpacking    = false
+   untracked bool feUnpacking     = true
+
+#   untracked string InputLabel = "rawDataCollector"
+   untracked vint32 FEDs = { 13 }
+   untracked int32 EcalFirstFED = 12
+   untracked string DCCMapFile = "EventFilter/EcalRawToDigiDev/data/DCCMap.txt"
+}
+
