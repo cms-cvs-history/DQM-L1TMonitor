@@ -1,5 +1,6 @@
 
+include "DQM/L1TMonitor/data/L1TECALTPG_unpck.cff"
 include "DQM/L1TMonitor/data/L1TECALTPG.cfi"
 
 
-path l1tecaltpgpath = {l1tecaltpg}
+path l1tecaltpgpath = {ecalEBunpacker, l1tecaltpg}
