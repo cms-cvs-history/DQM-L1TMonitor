@@ -1,6 +1,7 @@
+//module fedmonitor = FEDMonitor{}
+//path fedmonitorpath = {fedmonitor}
 
-include "DQM/L1TMonitor/data/L1TLTC.cff"
-
+include "DQM/L1TMonitor/data/L1TLTC.cff" 
 //include "DQM/L1TMonitor/data/L1THCALTPG.cff"
 include "DQM/L1TMonitor/data/L1TECALTPG.cff"
 
