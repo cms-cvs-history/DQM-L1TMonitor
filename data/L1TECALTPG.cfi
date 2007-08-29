@@ -4,6 +4,6 @@
           untracked bool MonitorDaemon = true
           untracked bool DaqMonitorBEInterface = true
           untracked string outputFile ="./L1TDQM.root"
-          InputTag ecaltpgSource = ecalEBunpacker::DQM
+          InputTag ecaltpgSource = ecalEBunpacker:EBTT:DQM
         }
 
