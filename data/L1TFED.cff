@@ -1,0 +1,4 @@
+
+include "DQM/L1TMonitor/data/L1TFED.cfi"
+
+path l1tfedpath = {l1tfed}
