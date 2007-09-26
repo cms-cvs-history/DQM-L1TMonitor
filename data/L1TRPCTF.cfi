@@ -4,7 +4,6 @@
           untracked bool MonitorDaemon = true
           untracked bool DaqMonitorBEInterface = true
           untracked string outputFile ="./L1TDQM.root"
-          InputTag rpctfbSource = L1RPCTFUnpack::DQM
-          InputTag rpctffSource = L1RPCTFUnpack::DQM
+          InputTag rpctfSource = l1GtUnpack::DQM
         }
 
