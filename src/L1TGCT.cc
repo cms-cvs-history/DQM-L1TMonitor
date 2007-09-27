@@ -1,13 +1,19 @@
 /*
  * \file L1TGCT.cc
  *
- * $Date: 2007/02/20 22:49:00 $
- * $Revision: 1.5 $
+ * $Date: 2007/02/22 19:43:53 $
+ * $Revision: 1.6 $
  * \author J. Berryhill
  *
  *  Initial version largely stolen from GCTMonitor (wittich 2/07)
  *
  * $Log: L1TGCT.cc,v $
+ * Revision 1.6  2007/02/22 19:43:53  berryhil
+ *
+ *
+ *
+ * InputTag parameters added for all modules
+ *
  * Revision 1.5  2007/02/20 22:49:00  wittich
  * - change from getByType to getByLabel in ECAL TPG,
  *   and make it configurable.
@@ -41,7 +47,9 @@
 
 // L1Extra
 #include "DataFormats/L1Trigger/interface/L1EmParticle.h"
+#include "DataFormats/L1Trigger/interface/L1EmParticleFwd.h"
 #include "DataFormats/L1Trigger/interface/L1JetParticle.h"
+#include "DataFormats/L1Trigger/interface/L1JetParticleFwd.h"
 #include "DataFormats/L1Trigger/interface/L1EtMissParticle.h"
 
 
