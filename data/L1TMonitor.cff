@@ -1,11 +1,11 @@
-include "DQM/L1TMonitor/data/L1TFED.cff"
-include "DQM/L1TMonitor/data/L1TLTC.cff" 
+//include "DQM/L1TMonitor/data/L1TFED.cff"
+//include "DQM/L1TMonitor/data/L1TLTC.cff" 
 
 include "DQM/L1TMonitor/data/L1TDTTPG.cff"
 //include "DQM/L1TMonitor/data/L1TCSCTPG.cff"
 //include "DQM/L1TMonitor/data/L1TRPCTPG.cff"
 
-include "DQM/L1TMonitor/data/L1TGT_readout.cff"
+//include "DQM/L1TMonitor/data/L1TGT_readout.cff"
 //include "DQM/L1TMonitor/data/L1TRPCTF.cff"
 //include "DQM/L1TMonitor/data/L1TCSCTF.cff"
 //include "DQM/L1TMonitor/data/L1TDTTF.cff"
@@ -15,10 +15,10 @@ include "DQM/L1TMonitor/data/L1TGT_readout.cff"
 //include "DQM/L1TMonitor/data/L1THCALTPG.cff"
 //include "DQM/L1TMonitor/data/L1TECALTPG.cff"
 
-include "DQM/L1TMonitor/data/L1TGCT_readout.cff"
+//include "DQM/L1TMonitor/data/L1TGCT_readout.cff"
 //include "DQM/L1TMonitor/data/L1TRCT.cff"
 //include "DQM/L1TMonitor/data/L1TGCT.cff"
-include "DQM/GCTMonitor/data/gctOnline.cff"
-path mygctmonitor = { gctOnline }
+//include "DQM/GCTMonitor/data/gctOnline.cff"
+//path mygctmonitor = { gctOnline }
 
 //include "DQM/L1TMonitor/data/L1TCompare.cff"
