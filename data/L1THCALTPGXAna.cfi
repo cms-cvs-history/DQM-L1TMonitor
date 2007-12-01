@@ -1,0 +1,11 @@
+       module l1thcaltpg = L1THCALTPGXAna{
+          untracked bool verbose = false
+          untracked bool MonitorDaemon = true
+          untracked bool DaqMonitorBEInterface = true
+          untracked double fakeCut = 5.0
+          untracked string outputFile ="./L1TDQM.root"
+          InputTag hcaltpgSource = hcalunpacker::DQM
+          InputTag hbherecoSource = hbhereco
+          InputTag hfrecoSource = hfreco
+        }
+

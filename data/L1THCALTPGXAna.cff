@@ -1,0 +1,42 @@
+
+	module  hcalunpacker = HcalRawToDigi {
+	   /// At most ten samples can be put into a digi, if there are more
+	   /// than ten, firstSample and lastSample select which samples
+	   /// will be copied to the digi
+	   int32 firstSample = 0
+	   int32 lastSample = 9
+	   untracked int32 HcalFirstFED = 700
+           untracked vint32 FEDs = { 719, 721, 723 }
+	   /// Flag to enable unpacking of calibration channels (default = false)
+	   untracked bool UnpackCalib = false
+	   /// Optional filter to remove any digi with "data valid" off, "error" on, 
+	   /// or capids not rotating
+	   bool FilterDataQuality = true
+	   /// Use the defaults for FED numbers
+	   /// Do not complain about missing FEDs
+	   untracked bool ComplainEmptyData = false
+	   /// Do not complain about missing FEDs
+	   untracked bool ExceptionEmptyData = false
+
+	  InputTag InputLabel = source
+	}
+
+        include "Geometry/CMSCommonData/data/cmsIdealGeometryXML.cfi"
+        include "Geometry/CaloEventSetup/data/CaloGeometry.cfi"
+        es_module = CaloTowerConstituentsMapBuilder {
+                untracked string MapFile="Geometry/CaloTopology/data/CaloTowerEEGeometric.map.gz"
+       }
+      include "Geometry/CaloEventSetup/data/CaloTopology.cfi"
+        es_module = HcalTopologyIdealEP {}
+        include "CalibCalorimetry/HcalPlugins/data/Hcal_FakeConditions.cfi"
+
+        include "RecoLocalCalo/HcalRecProducers/data/HcalSimpleReconstructor-hbhe.cfi"
+        include "RecoLocalCalo/HcalRecProducers/data/HcalSimpleReconstructor-hf.cfi"
+
+        replace hbhereco.digiLabel = hcalunpacker
+        replace hfreco.digiLabel = hcalunpacker
+	
+	include "DQM/L1TMonitor/data/L1THCALTPG.cfi"
+
+
+path l1thcaltpgpath = {hcalunpacker, hbhereco, hfreco, l1thcaltpg}
