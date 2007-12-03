@@ -5,12 +5,7 @@ include "DQM/L1TMonitor/data/L1TDTTPG.cff"
 //include "DQM/L1TMonitor/data/L1TCSCTPG.cff"
 //include "DQM/L1TMonitor/data/L1TRPCTPG.cff"
 
-//include "DQM/L1TMonitor/data/L1TGT_readout.cff"
-//include "DQM/L1TMonitor/data/L1TRPCTF.cff"
-//include "DQM/L1TMonitor/data/L1TCSCTF.cff"
-//include "DQM/L1TMonitor/data/L1TDTTF.cff"
-//include "DQM/L1TMonitor/data/L1TGMT.cff"
-//include "DQM/L1TMonitor/data/L1TGT.cff"
+include "DQM/L1TMonitor/data/L1TGT_readout.cff"
 
 //include "DQM/L1TMonitor/data/L1THCALTPG.cff"
 //include "DQM/L1TMonitor/data/L1TECALTPG.cff"

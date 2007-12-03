@@ -1,6 +1,11 @@
+include "L1TriggerConfig/L1GtConfigProducers/data/L1GtConfig.cff"
+
 include "L1TriggerConfig/L1ScalesProducers/data/L1MuTriggerScalesConfig.cff"
+include "L1TriggerConfig/L1ScalesProducers/data/L1MuGMTScalesConfig.cff"
+include "L1TriggerConfig/GMTConfigProducers/data/L1MuGMTParametersConfig.cff"  
 
 include "EventFilter/L1GlobalTriggerRawToDigi/data/l1GtUnpack.cfi"
+
    // input tag
     // packed GT DAQ record starting from DAQ
     replace l1GtUnpack.DaqGtInputTag = "source"
