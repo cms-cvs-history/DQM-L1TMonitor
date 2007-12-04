@@ -36,7 +36,7 @@
         replace hbhereco.digiLabel = hcalunpacker
         replace hfreco.digiLabel = hcalunpacker
 	
-	include "DQM/L1TMonitor/data/L1THCALTPG.cfi"
+	include "DQM/L1TMonitor/data/L1THCALTPGXAna.cfi"
 
 
-path l1thcaltpgpath = {hcalunpacker, hbhereco, hfreco, l1thcaltpg}
+path l1thcaltpgpath = {hcalunpacker, hbhereco, hfreco, l1thcaltpgxana}

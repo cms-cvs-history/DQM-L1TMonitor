@@ -1,4 +1,4 @@
-       module l1thcaltpg = L1THCALTPGXAna{
+       module l1thcaltpgxana = L1THCALTPGXAna{
           untracked bool verbose = false
           untracked bool MonitorDaemon = true
           untracked bool DaqMonitorBEInterface = true
