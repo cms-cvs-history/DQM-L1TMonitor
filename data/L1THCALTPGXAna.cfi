@@ -4,8 +4,8 @@
           untracked bool DaqMonitorBEInterface = true
           untracked double fakeCut = 5.0
           untracked string outputFile ="./L1TDQM.root"
-          InputTag hcaltpgSource = hcalunpacker::DQM
-          InputTag hbherecoSource = hbhereco
-          InputTag hfrecoSource = hfreco
+          InputTag hcaltpgSource = hcalDigis::DQM
+          InputTag hbherecoSource = hbhereco::DQM
+          InputTag hfrecoSource = hfreco::DQM
         }
 
