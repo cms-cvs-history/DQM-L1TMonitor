@@ -5,6 +5,6 @@
           untracked bool DaqMonitorBEInterface = true
 	  untracked bool disableROOToutput = true
           untracked string outputFile ="./L1TDQM.root"
-          InputTag hcaltpgSource = hcalunpacker::DQM
+          InputTag hcaltpgSource = hcalDigis::DQM
         }
 

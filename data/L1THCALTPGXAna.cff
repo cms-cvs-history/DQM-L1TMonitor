@@ -6,6 +6,8 @@
         include "RecoLocalCalo/HcalRecProducers/data/HcalSimpleReconstructor-ho.cfi"
         include "RecoLocalCalo/HcalRecProducers/data/HcalSimpleReconstructor-hf.cfi"
 	
+        
+	include "DQM/L1TMonitor/data/L1THCALTPG.cfi"
 	include "DQM/L1TMonitor/data/L1THCALTPGXAna.cfi"
 
-	path p = { hcalDigis, horeco, hfreco, hbhereco, l1thcaltpgxana}
+	path p = { hcalDigis, horeco, hfreco, hbhereco, l1thcaltpg, l1thcaltpgxana}
