@@ -1,6 +1,8 @@
 
-	include "DQM/HcalMonitorModule/data/Hcal_FrontierConditions_GREN.cff"
-        
+	include "DQM/HcalMonitorModule/data/Hcal_FrontierConditions_GREN.cff"           
+        replace hcalConditions.connect = "frontier://(serverurl=http://frontier1.cms:8000/FrontierOn)(serverurl=http://frontier2.cms:8000/FrontierOn)(retrieve-ziplevel=0)/CMS_COND_ON_170_HCAL"
+        replace hcalConditions.authenticationPath = "/nfshome0/hltpro/cmssw/cfg/"        
+
 	include "EventFilter/HcalRawToDigi/data/HcalRawToDigi.cfi"
         include "RecoLocalCalo/HcalRecProducers/data/HcalSimpleReconstructor-hbhe.cfi"
         include "RecoLocalCalo/HcalRecProducers/data/HcalSimpleReconstructor-ho.cfi"
