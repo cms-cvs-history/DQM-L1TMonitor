@@ -12,7 +12,7 @@ include "DQM/L1TMonitor/data/L1THCALTPGXAna.cff"
 include "DQM/L1TMonitor/data/L1TECALTPG.cff"
 
 //include "DQM/L1TMonitor/data/L1TGCT_readout.cff"
-include "DQM/L1TMonitor/data/L1TRCT.cff"
+//include "DQM/L1TMonitor/data/L1TRCT.cff"
 include "DQM/L1TMonitor/data/L1TGCT.cff"
 include "DQM/GCTMonitor/data/gctOnline.cff"
 path mygctmonitor = { gctOnline }
