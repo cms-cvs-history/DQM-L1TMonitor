@@ -1,4 +1,3 @@
-include "CondCore/DBCommon/data/CondDBSetup.cfi"
 
 es_module hcal_db_producer = HcalDbProducer {
          untracked vstring dump = {""}

@@ -1,5 +1,12 @@
 
+
+  # include "EventFilter/RPCRawToDigi/data/RPCOrconCabling.cfi"
+    include "EventFilter/RPCRawToDigi/data/RPCFrontierCabling.cfi"
+    module rpcunpacker = RPCUnpackingModule{
+         untracked InputTag InputLabel = source
+      }
+
 include "DQM/L1TMonitor/data/L1TRPCTPG.cfi"
 
 
-path l1trpctpgpath = {l1trpctpg}
+path l1trpctpgpath = {rpcunpacker, l1trpctpg}
