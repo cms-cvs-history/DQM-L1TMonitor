@@ -5,6 +5,11 @@
           untracked bool DaqMonitorBEInterface = true
 	  untracked bool disableROOToutput = true
           untracked string outputFile ="./L1TDQM.root"
-          InputTag gctSource = l1GctHwDigis::DQM
+          InputTag gctCentralJetsSource = l1GctHwDigis:cenJets:DQM
+          InputTag gctForwardJetsSource = l1GctHwDigis:forJets:DQM
+          InputTag gctTauJetsSource     = l1GctHwDigis:tauJets:DQM
+          InputTag gctEnergySumsSource  = l1GctHwDigis::DQM
+          InputTag gctIsoEmSource       = l1GctHwDigis:isoEm:DQM
+          InputTag gctNonIsoEmSource    = l1GctHwDigis:nonIsoEm:DQM
         }
 
