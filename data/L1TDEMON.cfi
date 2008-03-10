@@ -1,8 +1,6 @@
 module l1demon = L1TDEMON {
     InputTag DataEmulCompareSource = l1compare
-    untracked bool MonitorDaemon = true
-    untracked bool DaqMonitorBEInterface = true
+    untracked bool DQMStore = true
     untracked int32 VerboseFlag = 0
-    untracked bool disableROOToutput = true
     untracked string HistFile ="l1demon.root"
 }
