@@ -1,4 +1,4 @@
-//include "DQM/L1TMonitor/data/L1TEmulatorMonitor.cff"
+include "DQM/L1TMonitor/data/L1TEmulatorMonitor.cff"
 
 include "DQM/L1TMonitor/data/BxTiming.cff"
 
