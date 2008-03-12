@@ -8,10 +8,11 @@
       }
       VPSet toGet = {
         { string record = "RPCEMapRcd" string tag = "RPCEMap_v2" }
-      }
+     }
       untracked bool siteLocalConfig = false
     }
 
+//    include "EventFilter/RPCRawToDigi/data/RPCFrontierCabling.cfi"
     module rpcunpacker = RPCUnpackingModule{
          untracked InputTag InputLabel = source
       }
