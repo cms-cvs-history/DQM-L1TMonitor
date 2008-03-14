@@ -1,10 +1,8 @@
 
        module l1tgt = L1TGT{
           untracked bool verbose = false
-          untracked bool MonitorDaemon = true
-          untracked bool DaqMonitorBEInterface = true
+          untracked bool DQMStore = true
 	  untracked bool disableROOToutput = true
-          untracked string outputFile ="./L1TDQM.root"
           InputTag gtSource = l1GtUnpack::DQM
         }
 

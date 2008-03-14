@@ -7,7 +7,7 @@ include "DQM/L1TMonitor/data/L1TLTC.cff"
 
 include "DQM/L1TMonitor/data/L1TDTTPG.cff"
 include "DQM/L1TMonitor/data/L1TCSCTPG.cff"
-//include "DQM/L1TMonitor/data/L1TRPCTPG.cff"
+include "DQM/L1TMonitor/data/L1TRPCTPG.cff"
 
 include "DQM/L1TMonitor/data/L1TGT_readout.cff"
 

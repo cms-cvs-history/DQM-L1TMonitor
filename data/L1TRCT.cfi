@@ -1,10 +1,8 @@
 
        module l1trct = L1TRCT{
           untracked bool verbose = false
-          untracked bool MonitorDaemon = true
-          untracked bool DaqMonitorBEInterface = true
+          untracked bool DQMStore = true
 	  untracked bool disableROOToutput = true
-          untracked string outputFile ="./L1TDQM.root"
           InputTag rctSource = l1GctHwDigis::DQM
         }
 

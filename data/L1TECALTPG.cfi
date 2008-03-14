@@ -1,10 +1,8 @@
 
        module l1tecaltpg = L1TECALTPG{
           untracked bool verbose = false
-          untracked bool MonitorDaemon = true
-          untracked bool DaqMonitorBEInterface = true
+          untracked bool DQMStore = true
 	  untracked bool disableROOToutput = true
-          untracked string outputFile ="./L1TDQM.root"
           InputTag ecaltpgSourceB = ecalEBunpacker:EBTT:DQM
           InputTag ecaltpgSourceE = ecalEBunpacker:EETT:DQM
         }

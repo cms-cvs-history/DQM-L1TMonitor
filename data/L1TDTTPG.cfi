@@ -3,7 +3,6 @@
           untracked bool verbose = false
           untracked bool DQMStore = true
 	  untracked bool disableROOToutput = true
-          untracked string outputFile ="./L1TDQM.root"
           InputTag dttpgSource = l1tdttpgunpack::DQM
         }
 
