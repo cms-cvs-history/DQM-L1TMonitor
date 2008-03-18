@@ -1,22 +1,90 @@
 
+      es_source ecalConditions = PoolDBESSource{
+        using CondDBSetup
+
+        VPSet toGet = {
+            { string record = "EcalIntercalibConstantsRcd"
+              string tag = "EcalIntercalibConstants_CosmGain200" },
+            { string record = "EcalPedestalsRcd"
+              string tag = "EcalPedestals_online" },
+            { string record = "EcalADCToGeVConstantRcd"
+              string tag = "EcalADCToGeVConstant_CosmGain200" },
+            { string record = "EcalGainRatiosRcd"
+              string tag = "EcalGainRatios_trivial" },
+            { string record = "EcalWeightXtalGroupsRcd"
+              string tag = "EcalWeightXtalGroups_trivial" },
+            { string record = "EcalTBWeightsRcd"
+              string tag = "EcalTBWeights_trivial" },
+            { string record = "EcalLaserAlphasRcd"
+              string tag = "EcalLaserAlphas_trivial" },
+            { string record = "EcalLaserAPDPNRatiosRcd"
+              string tag = "EcalLaserAPDPNRatios_trivial" },
+            { string record = "EcalLaserAPDPNRatiosRefRcd"
+              string tag = "EcalLaserAPDPNRatiosRef_trivial" }
+        }
+#        string connect = "frontier://(serverurl=http://frontier1.cms:8000/FrontierOn)(serverurl=http://frontier2.cms:8000/FrontierOn)(retrieve-ziplevel=0)/CMS_COND_ON_18X_ECAL"
+        string connect = "frontier://FrontierOn/CMS_COND_ON_18X_ECAL"
+        untracked bool siteLocalConfig = false
+        untracked uint32 authenticationMethod = 1
+        string timetype = "runnumber"
+        untracked uint32 messagelevel = 0
+      }
+
+
+include "CalibCalorimetry/EcalLaserCorrection/data/ecalLaserCorrectionService.cfi"
+
+include "EventFilter/EcalRawToDigiDev/data/EcalUnpackerMapping.cfi"
+include "EventFilter/EcalRawToDigiDev/data/EcalUnpackerData.cfi"
+
+     module ecalUncalibHit2 = ecalFixedAlphaBetaFitUncalibRecHit from "RecoLocalCalo/EcalRecProducers/data/ecalFixedAlphaBetaFitUncalibRecHit.cfi"
+
+     replace ecalUncalibHit2.MinAmplBarrel = 12.
+     replace ecalUncalibHit2.MinAmplEndcap = 16.
+
+     replace ecalUncalibHit2.EBdigiCollection = ecalEBunpacker:ebDigis
+     replace ecalUncalibHit2.EEdigiCollection = ecalEBunpacker:eeDigis
+
+     module ecalUncalibHit = ecalWeightUncalibRecHit from "RecoLocalCalo/EcalRecProducers/data/ecalWeightUncalibRecHit.cfi"
+
+     replace ecalUncalibHit.EBdigiCollection = ecalEBunpacker:ebDigis
+     replace ecalUncalibHit.EEdigiCollection = ecalEBunpacker:eeDigis
+
+include "RecoLocalCalo/EcalRecProducers/data/ecalRecHit.cfi"
+
+     replace ecalRecHit.EBuncalibRecHitCollection = ecalUncalibHit:EcalUncalibRecHitsEB
+     replace ecalRecHit.EEuncalibRecHitCollection = ecalUncalibHit:EcalUncalibRecHitsEE
+
+
+include "SimCalorimetry/EcalTrigPrimProducers/data/ecalTriggerPrimitiveDigis.cff"
 include "Geometry/EcalMapping/data/EcalMapping.cfi"
- es_source eegeom = EmptyESSource {
-    string recordName = "EcalMappingRcd"
-    vuint32 firstValid = { 0 }
-    bool iovIsRunNotTime = false
- }
 
-module ecalEBunpacker = EcalRawToDigiDev {
-   # Default is true
-   untracked bool eventPut        = true
-   untracked bool memUnpacking    = false
-   untracked bool headerUnpacking = false
-   untracked bool srpUnpacking    = false
-   untracked bool feUnpacking     = true
+    replace ecalTriggerPrimitiveDigis.Label = "ecalEBunpacker"
+    replace ecalTriggerPrimitiveDigis.InstanceEB = "ebDigis"
+    replace ecalTriggerPrimitiveDigis.InstanceEE = "eeDigis"
+    replace ecalTriggerPrimitiveDigis.BarrelOnly = true
 
-#   untracked string InputLabel = "rawDataCollector"
-   untracked vint32 FEDs = { 13 }
-   untracked int32 EcalFirstFED = 12
-   untracked string DCCMapFile = "EventFilter/EcalRawToDigiDev/data/DCCMap.txt"
-}
+    replace EcalTrigPrimESProducer.DatabaseFileEB = "TPG_EB_MIPs.txt"
+    replace EcalTrigPrimESProducer.DatabaseFileEE = "TPG_EE.txt"
+
+
+include "RecoEcal/EgammaClusterProducers/data/ecalClusteringSequence.cff"
+
+     replace islandBasicClusters.IslandBarrelSeedThr = 0.150 # 0.500
+     replace islandBasicClusters.IslandEndcapSeedThr = 0.150 # 0.180
+
+     replace hybridSuperClusters.HybridBarrelSeedThr = 0.150 # 1.000
+     replace hybridSuperClusters.step = 1      # 17
+     replace hybridSuperClusters.eseed = 0.150 # 0.350
+
+     replace islandSuperClusters.seedTransverseEnergyThreshold = 0.150 # 1.000
+
+     sequence ecalBarrelDataSequence = { ecalEBunpacker,
+                                         ecalUncalibHit,
+                                         ecalUncalibHit2,
+                                         ecalRecHit,
+                                         ecalTriggerPrimitiveDigis
+                                      //   islandBasicClusters,
+                                      //   islandSuperClusters,
+                                      //   hybridSuperClusters 
+                                        }
 
