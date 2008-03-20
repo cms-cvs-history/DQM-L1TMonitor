@@ -1,6 +1,6 @@
 
        module l1tecaltpg = L1TECALTPG{
-          untracked bool verbose = true
+          untracked bool verbose = false
           untracked bool DQMStore = true
 	  untracked bool disableROOToutput = true
           InputTag ecaltpgSourceB =ecalEBunpacker:EcalTriggerPrimitives:DQM
