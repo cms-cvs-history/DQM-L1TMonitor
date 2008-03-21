@@ -3,6 +3,6 @@
           untracked bool verbose = false
           untracked bool DQMStore = true
 	  untracked bool disableROOToutput = true
-          InputTag csctpgSource = L1CSCTPGUnpack::DQM
+          InputTag csctpgSource = muonCSCDigis:MuonCSCCorrelatedLCTDigi:DQM
         }
 
