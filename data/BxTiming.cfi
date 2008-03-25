@@ -1,6 +1,7 @@
 module bxTiming = BxTiming {
     untracked InputTag FedSource = source
     untracked InputTag GtSource = gtUnpack
+    untracked vint32 GtBitList = { 0,1 }
     untracked int32 ReferenceFedId = 813 
     untracked string HistFile =""
     untracked string HistFolder = "L1T/BXSynch/"
