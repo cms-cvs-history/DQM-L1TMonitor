@@ -1,7 +1,3 @@
-include "DQM/L1TMonitor/data/L1TEmulatorMonitor.cff"
-
-include "DQM/L1TMonitor/data/BxTiming.cff"
-
 include "DQM/L1TMonitor/data/L1TFED.cff"
 include "DQM/L1TMonitor/data/L1TLTC.cff" 
 

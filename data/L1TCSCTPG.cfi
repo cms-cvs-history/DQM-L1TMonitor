@@ -1,8 +1,10 @@
 
        module l1tcsctpg = L1TCSCTPG{
           untracked bool verbose = false
-          untracked bool DQMStore = true
+          untracked bool MonitorDaemon = true
+          untracked bool DaqMonitorBEInterface = true
 	  untracked bool disableROOToutput = true
-          InputTag csctpgSource = muonCSCDigis:MuonCSCCorrelatedLCTDigi:DQM
+          untracked string outputFile ="./L1TDQM.root"
+          InputTag csctpgSource = L1CSCTPGUnpack::DQM
         }
 

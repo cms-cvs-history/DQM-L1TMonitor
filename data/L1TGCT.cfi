@@ -1,8 +1,10 @@
 
        module l1tgct = L1TGCT{
           untracked bool verbose = false
-          untracked bool DQMStore = true
+          untracked bool MonitorDaemon = true
+          untracked bool DaqMonitorBEInterface = true
 	  untracked bool disableROOToutput = true
+          untracked string outputFile ="./L1TDQM.root"
           InputTag gctCentralJetsSource = l1GctHwDigis:cenJets:DQM
           InputTag gctForwardJetsSource = l1GctHwDigis:forJets:DQM
           InputTag gctTauJetsSource     = l1GctHwDigis:tauJets:DQM

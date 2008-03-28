@@ -1,8 +1,10 @@
 
        module l1trpctpg = L1TRPCTPG{
           untracked bool verbose = false
-          untracked bool DQMStore = true
+          untracked bool MonitorDaemon = true
+          untracked bool DaqMonitorBEInterface = true
 	  untracked bool disableROOToutput = true
+          untracked string outputFile ="./L1TDQM.root"
           InputTag rpctpgSource = rpcunpacker::DQM
         }
 
