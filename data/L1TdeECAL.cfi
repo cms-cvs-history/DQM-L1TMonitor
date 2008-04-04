@@ -1,5 +1,7 @@
 module l1demonecal = L1TdeECAL {
     InputTag DataEmulCompareSource = l1compare
+    untracked bool verbose = false
     untracked bool DQMStore = true
-    untracked int32 VerboseFlag = 0
+    untracked bool disableROOToutput = true
+    untracked string outputFile ="./L1TDQM.root"
 }
