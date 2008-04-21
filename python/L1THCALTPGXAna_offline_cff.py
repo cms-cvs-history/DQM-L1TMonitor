@@ -17,6 +17,7 @@ hcal_db_producer = cms.ESProducer("HcalDbProducer",
 
 hcalConditions = cms.ESSource("PoolDBESSource",
     CondDBSetup,
+    #    string connect = "frontier://(serverurl=http://frontier1.cms:8000/FrontierOn)(serverurl=http://frontier2.cms:8000/FrontierOn)(retrieve-ziplevel=0)/CMS_COND_ON_170_HCAL"
     siteLocalConfig = cms.untracked.bool(False),
     toGet = cms.VPSet(cms.PSet(
         record = cms.string('HcalPedestalsRcd'),
@@ -40,7 +41,7 @@ hcalConditions = cms.ESSource("PoolDBESSource",
         )),
     messageLevel = cms.untracked.int32(0),
     timetype = cms.string('runnumber'),
-    connect = cms.string('frontier://(serverurl=http://frontier1.cms:8000/FrontierOn)(serverurl=http://frontier2.cms:8000/FrontierOn)(retrieve-ziplevel=0)/CMS_COND_ON_170_HCAL'), ##(serverurl=http:
+    connect = cms.string('frontier://Frontier/CMS_COND_ON_170_HCAL'), ##Frontier/CMS_COND_ON_170_HCAL"
 
     authenticationMethod = cms.untracked.uint32(1)
 )
