@@ -4,8 +4,8 @@
 /*
  * \file L1TRPCTF.h
  *
- * $Date: 2008/03/01 00:40:00 $
- * $Revision: 1.5 $
+ * $Date: 2007/09/26 14:18:03 $
+ * $Revision: 1.4 $
  * \author J. Berryhill
  *
 */
@@ -73,9 +73,6 @@ private:
   MonitorElement* rpctfntrack;
   MonitorElement* rpctfbx;
 
-  MonitorElement* m_qualVsEta;
-  MonitorElement* m_muonsEtaPhi;
-  
   int nev_; // Number of events processed
   std::string outputFile_; //file name for ROOT ouput
   bool verbose_;

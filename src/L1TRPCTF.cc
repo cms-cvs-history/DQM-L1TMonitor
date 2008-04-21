@@ -1,8 +1,8 @@
 /*
  * \file L1TRPCTF.cc
  *
- * $Date: 2008/03/20 19:38:25 $
- * $Revision: 1.12 $
+ * $Date: 2008/03/14 20:35:46 $
+ * $Revision: 1.11 $
  * \author J. Berryhill
  *
  */
@@ -78,11 +78,11 @@ void L1TRPCTF::beginJob(const EventSetup& c)
     rpctfetavalue[0] = dbe->book1D("RPCTF_eta_value_-1", 
        "RPCTF eta value bx -1", 100, -2.5, 2.5 ) ;
     rpctfphivalue[1] = dbe->book1D("RPCTF_phi_value", 
-       "RPCTF phi value", 144, 0.0, 6.2832 ) ;
+       "RPCTF phi value", 100, 0.0, 6.2832 ) ;
     rpctfphivalue[2] = dbe->book1D("RPCTF_phi_value_+1", 
-       "RPCTF phi value bx +1", 144, 0.0, 6.2832 ) ;
+       "RPCTF phi value bx +1", 100, 0.0, 6.2832 ) ;
     rpctfphivalue[0] = dbe->book1D("RPCTF_phi_value_-1", 
-       "RPCTF phi value bx -1", 144, 0.0, 6.2832 ) ;
+       "RPCTF phi value bx -1", 100, 0.0, 6.2832 ) ;
     rpctfptvalue[1] = dbe->book1D("RPCTF_pt_value", 
        "RPCTF pt value", 160, -0.5, 159.5 ) ;
     rpctfptvalue[2] = dbe->book1D("RPCTF_pt_value_+1", 
@@ -105,16 +105,6 @@ void L1TRPCTF::beginJob(const EventSetup& c)
        "RPCTF ntrack", 20, -0.5, 19.5 ) ;
     rpctfbx = dbe->book1D("RPCTF_bx", 
        "RPCTF bx", 3, -1.5, 1.5 ) ;
-    
-    m_qualVsEta = dbe->book2D("RPCTF_quality_vs_eta_value", 
-                              "RPCTF quality vs eta", 
-                              100, -2.5, 2.5,
-                               10, -0.5, 9.5);
-    
-    m_muonsEtaPhi = dbe->book2D("RPCTF_muons_eta_phipacked", 
-                                "RPCTF muons(eta,phipacked)",  
-                                100, -2.5, 2.5,
-                                144,  -0.5, 143.5);
   }  
 }
 
@@ -134,6 +124,7 @@ void L1TRPCTF::analyze(const Event& e, const EventSetup& c)
   nev_++; 
   if(verbose_) cout << "L1TRPCTF: analyze...." << endl;
 
+
   edm::Handle<L1MuGMTReadoutCollection> pCollection;
   e.getByLabel(rpctfSource_,pCollection);
   
@@ -152,60 +143,86 @@ void L1TRPCTF::analyze(const Event& e, const EventSetup& c)
        RRItr != gmt_records.end() ;
        RRItr++ ) 
   {
-    
-   if (verbose_) cout << "Readout Record " << RRItr->getBxInEvent() << endl;
-   
-   vector<vector<L1MuRegionalCand> > brlAndFwdCands;
-   brlAndFwdCands.push_back(RRItr->getBrlRPCCands());
-   brlAndFwdCands.push_back(RRItr->getFwdRPCCands());
-   
-   //if (verbose_) cout << "RPCTFCands " << RPCTFCands.size() << endl;
-   
-   vector<vector<L1MuRegionalCand> >::iterator RPCTFCands = brlAndFwdCands.begin();
-   for(; RPCTFCands!= brlAndFwdCands.end(); ++RPCTFCands)
-   {
-      for( vector<L1MuRegionalCand>::const_iterator 
-          ECItr = RPCTFCands->begin() ;
-          ECItr != RPCTFCands->end() ;
-          ++ECItr ) 
-      {
-  
-        int bxindex = ECItr->bx() + 1;
-        
-        if (!ECItr->empty()) {
-          
-          nrpctftrack++;
-    
-          if (verbose_) cout << "RPCTFCand bx " << ECItr->bx() << endl;
-          rpctfbx->Fill(ECItr->bx());
-    
-          rpctfetavalue[bxindex]->Fill(ECItr->etaValue());
-          if (verbose_) cout << "\tRPCTFCand eta value " << ECItr->etaValue() << endl;
-  
-          rpctfphivalue[bxindex]->Fill(ECItr->phiValue());
-          if (verbose_) cout << "\tRPCTFCand phi value " << ECItr->phiValue() << endl;
-    
-          rpctfptvalue[bxindex]->Fill(ECItr->ptValue());
-          if (verbose_) cout << "\tRPCTFCand pt value " << ECItr->ptValue()<< endl;
-    
-          rpctfchargevalue[bxindex]->Fill(ECItr->chargeValue());
-          if (verbose_) cout << "\tRPCTFCand charge value " << ECItr->chargeValue() << endl;
-    
-          rpctfquality[bxindex]->Fill(ECItr->quality());
-          if (verbose_) cout << "\tRPCTFCand quality " << ECItr->quality() << endl;
-          
-          m_qualVsEta->Fill(ECItr->etaValue(), ECItr->quality());
-          
-          m_muonsEtaPhi->Fill(ECItr->etaValue(), ECItr->phi_packed());
-          
-        } // if !empty
-      } // end candidates iteration
-   } // end brl/endcap iteration
-  } // end GMT records iteration
 
-  rpctfntrack->Fill(nrpctftrack);
-  
-  if (verbose_) cout << "\tRPCTFCand ntrack " << nrpctftrack << endl;
-	
+    if (verbose_)
+    {
+     cout << "Readout Record " << RRItr->getBxInEvent()
+   	    << endl;
+   }
+ 
+   vector<L1MuRegionalCand> RPCTFCands = RRItr->getBrlRPCCands();
+ 
+
+   if (verbose_) 
+    {
+     cout << "RPCTFCands " << RPCTFCands.size()
+   	    << endl;
+    }
+
+    for( vector<L1MuRegionalCand>::const_iterator 
+         ECItr = RPCTFCands.begin() ;
+         ECItr != RPCTFCands.end() ;
+         ++ECItr ) 
+    {
+
+      int bxindex = ECItr->bx() + 1;
+      if (ECItr->quality() > 0 ) {
+      nrpctftrack++;
+
+      if (verbose_)
+	{  
+     cout << "RPCTFCand bx " << ECItr->bx()
+   	    << endl;
+	}
+     rpctfbx->Fill(ECItr->bx());
+
+      rpctfetavalue[bxindex]->Fill(ECItr->etaValue());
+      if (verbose_)
+	{     
+     cout << "\tRPCTFCand eta value " << ECItr->etaValue()
+   	    << endl;
+	}
+
+      rpctfphivalue[bxindex]->Fill(ECItr->phiValue());
+      if (verbose_)
+	{     
+     cout << "\tRPCTFCand phi value " << ECItr->phiValue()
+   	    << endl;
+	}
+
+      rpctfptvalue[bxindex]->Fill(ECItr->ptValue());
+      if (verbose_)
+	{     
+     cout << "\tRPCTFCand pt value " << ECItr->ptValue()
+   	    << endl;
+	}
+
+
+      rpctfchargevalue[bxindex]->Fill(ECItr->chargeValue());
+      if (verbose_)
+	{     
+     cout << "\tRPCTFCand charge value " << ECItr->chargeValue()
+   	    << endl;
+	}
+
+      rpctfquality[bxindex]->Fill(ECItr->quality());
+      if (verbose_)
+	{     
+     cout << "\tRPCTFCand quality " << ECItr->quality()
+   	    << endl;
+	}
+
+      }
+    }
+
+
+  }
+
+      rpctfntrack->Fill(nrpctftrack);
+      if (verbose_)
+	{     
+     cout << "\tRPCTFCand ntrack " << nrpctftrack
+   	    << endl;
+	}
 }
 

@@ -26,8 +26,6 @@
 <use name=RecoMuon/DetLayers>
 <use name=Geometry/Records>
 <use name=DataFormats/EcalDigi>
-<use name=CondFormats/DataRecord>
-<use name=CondFormats/L1TObjects>
 <use name=mimetic>
 <use name=xdaq>
 <use name=root>
@@ -62,8 +60,6 @@
   <use name=Geometry/RPCGeometry>
   <use name=RecoMuon/DetLayers>
   <use name=Geometry/Records>
-  <use name=CondFormats/DataRecord>
-  <use name=CondFormats/L1TObjects>
   <use name=mimetic>
   <use name=xdaq>
   <use name=root>
