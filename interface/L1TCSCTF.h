@@ -4,8 +4,8 @@
 /*
  * \file L1TCSCTF.h
  *
- * $Date: 2008/03/01 00:40:00 $
- * $Revision: 1.7 $
+ * $Date: 2007/12/03 14:24:08 $
+ * $Revision: 1.6 $
  * \author J. Berryhill
  *
 */
@@ -32,10 +32,6 @@
 #include "DataFormats/L1GlobalMuonTrigger/interface/L1MuGMTCand.h"
 #include "DataFormats/L1GlobalMuonTrigger/interface/L1MuGMTExtendedCand.h"
 #include "DataFormats/L1GlobalMuonTrigger/interface/L1MuGMTReadoutCollection.h"
-
-// KK_start: Sector Receiver LUT class to transform wire/strip numbers to eta/phi observables
-#include "L1Trigger/CSCTrackFinder/interface/CSCSectorReceiverLUT.h"
-// KK_end
 
 #include <iostream>
 #include <fstream>
@@ -77,18 +73,12 @@ private:
   MonitorElement* csctfntrack;
   MonitorElement* csctfbx;
 
-  // KK_start: see source for description
-  MonitorElement* csctferrors;
-  MonitorElement* csctfoccupancies;
-  CSCSectorReceiverLUT *srLUTs_[5];
-  // KK_end
-
   int nev_; // Number of events processed
   std::string outputFile_; //file name for ROOT ouput
   bool verbose_;
   bool monitorDaemon_;
   ofstream logFile_;
-  edm::InputTag gmtProducer, lctProducer, trackProducer, statusProducer;
+  edm::InputTag csctfSource_ ;
 };
 
 #endif

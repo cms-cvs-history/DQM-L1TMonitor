@@ -3,10 +3,6 @@
           untracked bool verbose = false
           untracked bool DQMStore = true
 	  untracked bool disableROOToutput = true
-	  untracked string outputFile = ""
-          InputTag gmtProducer    = null: #l1GtUnpack::DQM
-          InputTag lctProducer    = csctfunpacker:
-          InputTag trackProducer  = csctfunpacker:
-          InputTag statusProducer = csctfunpacker:
+          InputTag csctfSource = l1GtUnpack::DQM
         }
 
