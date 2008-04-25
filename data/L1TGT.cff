@@ -1,4 +1,4 @@
 include "DQM/L1TMonitor/data/L1TGT.cfi"
 
 
-path l1tgtpath = {l1GtUnpack, l1tgt}
+path l1tgtpath = {l1GtUnpack, l1GtEvmUnpack, l1tgt}

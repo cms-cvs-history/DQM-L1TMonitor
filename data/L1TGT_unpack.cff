@@ -40,3 +40,5 @@ include "EventFilter/L1GlobalTriggerRawToDigi/data/l1GtUnpack.cfi"
     // 3 BxInEvent (F, 0, 1)
     //replace l1GtUnpack.UnpackBxInEvent = 3
 
+include "EventFilter/L1GlobalTriggerRawToDigi/data/l1GtEvmUnpack.cfi"
+    replace l1GtEvmUnpack.EvmGtInputTag = "source"
