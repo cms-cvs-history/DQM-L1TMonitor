@@ -1,0 +1,9 @@
+module l1tderct = L1TdeRCT{
+          untracked bool verbose = false
+          untracked bool DQMStore = true
+	  untracked bool disableROOToutput = true
+          untracked string outputFile ="./L1TDQM.root"
+          InputTag rctSourceData = rctDigis 
+          InputTag rctSourceEmul = rctDigis 
+        }
+
