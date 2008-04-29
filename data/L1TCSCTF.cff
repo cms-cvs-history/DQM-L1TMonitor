@@ -1,7 +1,5 @@
 include "DQM/L1TMonitor/data/L1TCSCTF.cfi"
+include "EventFilter/CSCTFRawToDigi/data/csctfunpacker.cfi"
 
-
-#path l1tcsctfpath = {l1GtUnpack, l1tcsctf}
-
-path l1tcsctfpath = {csctfunpacker, l1tcsctf}
+sequence l1tcsctfpath = {csctfunpacker, l1tcsctf}
 
