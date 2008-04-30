@@ -14,8 +14,9 @@
 
 //    include "EventFilter/RPCRawToDigi/data/RPCFrontierCabling.cfi"
     module rpcunpacker = RPCUnpackingModule{
-         untracked InputTag InputLabel = source
-      }
+#         untracked InputTag InputLabel = source
+         untracked InputTag InputLabel = rawDataCollector      
+}
 
 include "DQM/L1TMonitor/data/L1TRPCTPG.cfi"
 

@@ -1,8 +1,10 @@
 
        module l1tdttf = L1TDTTF{
+          untracked string l1tInfoFolder =  "L1T/EventInfo"
+          untracked string l1tSystemFolder = "L1T/L1TDTTF"
           untracked bool verbose = false
           untracked bool DQMStore = true
 	  untracked bool disableROOToutput = true
-          InputTag dttfSource = l1GtUnpack::DQM
+          InputTag dttpgSource = l1tdttfunpack::DQM
         }
 
