@@ -1,4 +1,5 @@
 module l1tderct = L1TdeRCT{
+          untracked bool singlechannelhistos = false
           untracked bool verbose = false
           untracked bool DQMStore = true
 	  untracked bool disableROOToutput = true
