@@ -4,7 +4,8 @@ module l1tderct = L1TdeRCT{
           untracked bool DQMStore = true
 	  untracked bool disableROOToutput = true
           untracked string outputFile ="./L1TDQM.root"
-          InputTag rctSourceData = rctDigis 
-          InputTag rctSourceEmul = rctDigis 
+          untracked string HistFolder = "L1TEMU/L1TdeRCT/"
+          InputTag rctSourceData = gctDigis
+          InputTag rctSourceEmul = valRctDigis
         }
 

@@ -2,4 +2,6 @@ module l1demon = L1TDEMON {
     InputTag DataEmulCompareSource = l1compare
     untracked bool DQMStore = true
     untracked int32 VerboseFlag = 0
+    untracked string HistFile = ""
+    untracked string HistFolder = "L1TEMU/"    
 }

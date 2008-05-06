@@ -4,84 +4,55 @@
  nuno.leonardo@cern.ch 08.02
 */
 
-#systems configuration
+
+#subsystem specific configurations
+include "L1Trigger/HardwareValidation/hwtest/globrun/deEcal.cff"
+include "L1Trigger/HardwareValidation/hwtest/globrun/deHcal.cff"
+include "L1Trigger/HardwareValidation/hwtest/globrun/deRct.cff"
+include "L1Trigger/HardwareValidation/hwtest/globrun/deGct.cff"
+include "L1Trigger/HardwareValidation/hwtest/globrun/deDt.cff"
+include "L1Trigger/HardwareValidation/hwtest/globrun/deCsc.cff"
+include "L1Trigger/HardwareValidation/hwtest/globrun/deRpc.cff"
 include "L1Trigger/HardwareValidation/hwtest/globrun/deGmt.cff"
-#include "L1Trigger/HardwareValidation/hwtest/globrun/deRpc.cff"
-#include "L1Trigger/HardwareValidation/hwtest/globrun/deDt.cff"
-#include "L1Trigger/HardwareValidation/hwtest/globrun/deCsc.cff"
-#include "L1Trigger/HardwareValidation/hwtest/globrun/deGct.cff"
-#include "L1Trigger/HardwareValidation/hwtest/globrun/deRct.cff"
-#include "L1Trigger/HardwareValidation/hwtest/globrun/deEcal.cff"
-#include "L1Trigger/HardwareValidation/hwtest/globrun/deHcal.cff"
+#include "L1Trigger/HardwareValidation/hwtest/globrun/deGt.cff"
 
-#data|emulator comparator
-include "L1Trigger/HardwareValidation/data/L1Comparator.cfi"
-
-#ecal
-replace l1compare.ETPsourceData = ecalEBunpacker:EBTT
-replace l1compare.ETPsourceEmul = ecalTriggerPrimitiveDigis
-#hcal
-replace l1compare.HTPsourceData = hcalDigis
-replace l1compare.HTPsourceEmul = hcalTriggerPrimitiveDigis
-#rct
-replace l1compare.RCTsourceData = gctUnpacker
-replace l1compare.RCTsourceEmul = l1RctEmulDigis
-#gct
-replace l1compare.GCTsourceData = gctUnpacker
-replace l1compare.GCTsourceEmul = l1GctEmulDigis
-#dt
-replace l1compare.DTPsourceData = muonDTTFDigis
-replace l1compare.DTPsourceEmul = 1DTTPGEmulDigis
-replace l1compare.DTFsourceData = muonDTTFDigis
-replace l1compare.DTFsourceEmul = l1DttfEmulDigis
-#csc
-replace l1compare.CTPsourceData = csctfunpacker
-replace l1compare.CTPsourceEmul = l1CscTpgEmulDigis
-replace l1compare.CTFsourceData = csctfunpacker
-replace l1compare.CTFsourceEmul = l1CscTfEmulDigis	      
-replace l1compare.CTTsourceData = csctfunpacker
-replace l1compare.CTTsourceEmul = l1CscTfTrackEmulDigis
-#rpc
-replace l1compare.RPCsourceData = muonRPCDigis
-replace l1compare.RPCsourceEmul = l1RpcEmulDigis
-#gmt
-replace l1compare.GMTsourceData = gtUnpack
-replace l1compare.GMTsourceEmul = l1GmtEmulDigis
-
-replace l1compare.COMPARE_COLLS = { 0,0,0,0, 0,0,0,0,0, 0,1,0 }
-#sequence {ETP,HTP,RCT,GCT, DTP,DTF,CTP,CTF,RPC, LTC,GMT,GT}
-
-#dqm sources    
-include "DQM/L1TMonitor/data/L1TDEMON.cfi"
+include "L1Trigger/HardwareValidation/hwtest/globrun/deCommon.cff"
 
 #calo unpack
-#path unpketp = {ecalEBunpacker}
-#path unpkhtp = {hcalDigis}
-#path unpkgct = {gctUnpacker}
+path unpketp = {ecalDigis}
+path unpkhtp = {hcalDigis}
+path unpkgct = {gctDigis}
 
 #calo emulator
-#path emuletp = {ecalTriggerPrimitiveDigis}
-#path emulhtp = {hcalTriggerPrimitiveDigis}
-#path emulrct = {maskedRctInputDigis, l1RctEmulDigis }
-#path emulgct = {l1GctEmulDigis}
+path emuletp = {valEcalTriggerPrimitiveDigis}
+path emulhtp = {valHcalTriggerPrimitiveDigis}
+path emulrct = {maskedRctInputDigis, valRctDigis}
+#path emulgct = {valGctDigis}
 
 #muon unpack
-#path unpkctp = {muonCSCDigis}
-#path unpkctf = {csctfunpacker}
-#path unpkdtp = {muonDTDigis}
-#path unpkdtf = {muonDTTFDigis}
-#path unpkrpc = {muonRPCDigis}
-path unpkglt = {gtUnpack}
+path unpkctp = {muonCSCDigis}
+path unpkctf = {csctfDigis}
+path unpkdtp = {muonDTDigis}
+path unpkdtf = {dttfDigis}
+path unpkrpc = {muonRPCDigis}
+path unpkglt = {gtDigis}
 
 #muon emulator
-#path emulctp = {l1CscTpgEmulDigis}
-#path emulctf = {l1CscTfTrackEmulDigis,l1CscTfEmulDigis}
-#path emuldtp = {l1DTTPGEmulDigis}
-#path emuldtf = {l1DttfEmulDigis}
-#path emulrpc = {l1RpcEmulDigis}
-path emulgmt = {l1GmtEmulDigis}
+path emulctp = {valCscTriggerPrimitiveDigis}
+path emulctf = {valCsctfTrackDigis, valCsctfDigis}
+path emuldtp = {valDtTriggerPrimitiveDigis}
+path emuldtf = {valDttfDigis}
+path emulrpc = {valRpcTriggerDigis}
+#path emulgmt = {valGmtDigis}
 
-#comparator, dqm
-path anacomp = {l1compare,l1demon}
+#extract further products for comparison
+path prodMon = {muonDtMon, muonCscMon}
 
+#comparator, std emul dqm
+#replace l1compare.COMPARE_COLLS= { 0,0,0,0,0,0,0,0,0,0,0,0 }
+replace l1compare.COMPARE_COLLS= { 1,1,1,1, 1,1,1,1,1, 0,1,1 }
+#compareMode  {ETP,HTP,RCT,GCT, DTP,DTF,CTP,CTF,RPC, LTC,GMT,GT};
+path emulana = {l1compare, l1demon}
 
+#expert emul dqm
+path exptana = {l1demonecal, l1tderct}
