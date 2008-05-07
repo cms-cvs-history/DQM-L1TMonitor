@@ -3,6 +3,6 @@
           untracked bool verbose = false
           untracked bool DQMStore = true
 	  untracked bool disableROOToutput = true
-          InputTag rctSource = l1GctHwDigis::DQM
+          InputTag rctSource = rctDigis
         }
 
