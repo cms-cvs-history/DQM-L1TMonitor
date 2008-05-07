@@ -1,0 +1,12 @@
+path l1bxtimingpath = {bxTiming} 
+path l1tfedpath = {l1tfed}
+path l1tltcpath = {l1tltc}
+path l1tgtpath = {l1tgt}
+path l1trpctfpath = {l1trpctf}
+path l1tcsctfpath = {l1tcsctf}
+path l1tdttpgpath = {l1tdttf}
+path l1tgmtpath = {l1tgmt}
+path l1trctpath = {l1trct}
+path l1tgctpath = {l1tgct}
+
+//add various input tag replacements

@@ -1,2 +1,2 @@
 include "DQM/L1TMonitor/data/BxTiming.cfi"
-path l1bxtimingpath = {bxTiming} 
+

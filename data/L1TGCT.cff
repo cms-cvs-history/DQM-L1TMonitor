@@ -1,8 +1,7 @@
 
 # relevant FED is 745
-include "DQM/L1TMonitor/data/L1TGCT_unpack.cff"
-include "DQM/L1TMonitor/data/L1TRCT.cfi"
 include "DQM/L1TMonitor/data/L1TGCT.cfi"
 
 
-path l1tgctpath = {l1GctHwDigis, l1trct, l1tgct}
+
+

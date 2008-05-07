@@ -3,4 +3,4 @@ module l1tltcunpack = LTCRawToDigi{}
 
 include "DQM/L1TMonitor/data/L1TLTC.cfi"
 
-path l1tltcpath = {l1tltcunpack, l1tltc}
+

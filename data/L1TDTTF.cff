@@ -1,12 +1,4 @@
-
-        module l1tdttfunpack = DTTFFEDReader{
-#        InputTag DTTF_FED_Source = rawDataCollector
-        InputTag DTTF_FED_Source = source
-	}
-
-
-
 include "DQM/L1TMonitor/data/L1TDTTF.cfi"
 
 
-path l1tdttpgpath = {l1tdttfunpack,l1tdttf}
+
