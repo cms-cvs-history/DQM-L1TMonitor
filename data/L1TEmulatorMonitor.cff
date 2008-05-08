@@ -14,7 +14,7 @@ include "L1Trigger/HardwareValidation/hwtest/globrun/deDt.cff"
 include "L1Trigger/HardwareValidation/hwtest/globrun/deCsc.cff"
 include "L1Trigger/HardwareValidation/hwtest/globrun/deRpc.cff"
 include "L1Trigger/HardwareValidation/hwtest/globrun/deGmt.cff"
-#include "L1Trigger/HardwareValidation/hwtest/globrun/deGt.cff"
+include "L1Trigger/HardwareValidation/hwtest/globrun/deGt.cff"
 
 include "L1Trigger/HardwareValidation/hwtest/globrun/deCommon.cff"
 
@@ -27,7 +27,7 @@ path unpkgct = {gctDigis}
 path emuletp = {valEcalTriggerPrimitiveDigis}
 path emulhtp = {valHcalTriggerPrimitiveDigis}
 path emulrct = {maskedRctInputDigis, valRctDigis}
-#path emulgct = {valGctDigis}
+path emulgct = {valGctDigis}
 
 #muon unpack
 path unpkctp = {muonCSCDigis}
@@ -43,16 +43,15 @@ path emulctf = {valCsctfTrackDigis, valCsctfDigis}
 path emuldtp = {valDtTriggerPrimitiveDigis}
 path emuldtf = {valDttfDigis}
 path emulrpc = {valRpcTriggerDigis}
-#path emulgmt = {valGmtDigis}
+path emulgmt = {valGmtDigis}
 
 #extract further products for comparison
 path prodMon = {muonDtMon, muonCscMon}
 
-#comparator, std emul dqm
-#replace l1compare.COMPARE_COLLS= { 0,0,0,0,0,0,0,0,0,0,0,0 }
+#comparator
 replace l1compare.COMPARE_COLLS= { 1,1,1,1, 1,1,1,1,1, 0,1,1 }
-#compareMode  {ETP,HTP,RCT,GCT, DTP,DTF,CTP,CTF,RPC, LTC,GMT,GT};
-path emulana = {l1compare, l1demon}
+#key {ETP,HTP,RCT,GCT, DTP,DTF,CTP,CTF,RPC, LTC,GMT,GT}
+path emulcmp = {l1compare }
 
-#expert emul dqm
-path exptana = {l1demonecal, l1tderct}
+#dqm
+path dqmana = {l1demon, l1demonecal, l1tderct}
