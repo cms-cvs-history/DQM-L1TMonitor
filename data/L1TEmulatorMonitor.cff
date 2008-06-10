@@ -44,6 +44,7 @@ path emuldtp = {valDtTriggerPrimitiveDigis}
 path emuldtf = {valDttfDigis}
 path emulrpc = {valRpcTriggerDigis}
 path emulgmt = {valGmtDigis}
+path emulglt = {valGtDigis}
 
 #extract further products for comparison
 path prodMon = {muonDtMon, muonCscMon}
