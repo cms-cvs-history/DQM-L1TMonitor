@@ -34,7 +34,7 @@ path unpkctp = {muonCSCDigis}
 path unpkctf = {csctfDigis}
 path unpkdtp = {muonDTDigis}
 path unpkdtf = {dttfDigis}
-path unpkrpc = {muonRPCDigis}
+#path unpkrpc = {muonRPCDigis}
 path unpkglt = {gtDigis}
 
 #muon emulator
@@ -42,7 +42,7 @@ path emulctp = {valCscTriggerPrimitiveDigis}
 path emulctf = {valCsctfTrackDigis, valCsctfDigis}
 path emuldtp = {valDtTriggerPrimitiveDigis}
 path emuldtf = {valDttfDigis}
-path emulrpc = {valRpcTriggerDigis}
+#path emulrpc = {valRpcTriggerDigis}
 path emulgmt = {valGmtDigis}
 path emulglt = {valGtDigis}
 
@@ -50,7 +50,7 @@ path emulglt = {valGtDigis}
 path prodMon = {muonDtMon, muonCscMon}
 
 #comparator
-replace l1compare.COMPARE_COLLS= { 1,1,1,1, 1,1,1,1,1, 0,1,1 }
+replace l1compare.COMPARE_COLLS= { 1,1,1,1, 1,1,1,1,0, 0,1,1 }
 #key {ETP,HTP,RCT,GCT, DTP,DTF,CTP,CTF,RPC, LTC,GMT,GT}
 path emulcmp = {l1compare }
 
