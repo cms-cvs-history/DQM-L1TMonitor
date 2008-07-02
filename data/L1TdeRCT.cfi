@@ -7,5 +7,7 @@ module l1tderct = L1TdeRCT{
           untracked string HistFolder = "L1TEMU/L1TdeRCT/"
           InputTag rctSourceData = gctDigis
           InputTag rctSourceEmul = valRctDigis
+          InputTag ecalTPGData = ecalEBunpacker:EcalTriggerPrimitives
+          InputTag hcalTPGData = hcalDigis
         }
 
