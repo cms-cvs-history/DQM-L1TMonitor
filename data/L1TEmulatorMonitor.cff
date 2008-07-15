@@ -16,43 +16,51 @@ include "L1Trigger/HardwareValidation/hwtest/globrun/deRpc.cff"
 include "L1Trigger/HardwareValidation/hwtest/globrun/deGmt.cff"
 include "L1Trigger/HardwareValidation/hwtest/globrun/deGt.cff"
 
+#common configuration
 include "L1Trigger/HardwareValidation/hwtest/globrun/deCommon.cff"
 
-#calo unpack
-path unpketp = {ecalDigis}
-path unpkhtp = {hcalDigis}
-path unpkgct = {gctDigis}
+#subsytems being monitored
+replace l1compare.COMPARE_COLLS= { 1,1,1,1, 1,1,1,1,1, 0,1,1 }
+#key: ETP,HTP,RCT,GCT, DTP,DTF,CTP,CTF,RPC, LTC,GMT,GT
 
-#calo emulator
-path emuletp = {valEcalTriggerPrimitiveDigis}
-path emulhtp = {valHcalTriggerPrimitiveDigis}
-path emulrct = {maskedRctInputDigis, valRctDigis}
-path emulgct = {valGctDigis}
+#path
+path p = {
+    #unpacker
+    RawToDigi_woTracker,
+    #emulator/comparator
+    L1HardwareValidation,
+    #dqm
+    l1demon, l1demonecal, l1tderct
+}
 
-#muon unpack
-path unpkctp = {muonCSCDigis}
-path unpkctf = {csctfDigis}
-path unpkdtp = {muonDTDigis}
-path unpkdtf = {dttfDigis}
-#path unpkrpc = {muonRPCDigis}
-path unpkglt = {gtDigis}
+#Note: default paths include _all_ subsystems
+#for enabling a subset, replace the default above 
+#with the desired subsystem selection from below  
 
-#muon emulator
-path emulctp = {valCscTriggerPrimitiveDigis}
-path emulctf = {valCsctfTrackDigis, valCsctfDigis}
-path emuldtp = {valDtTriggerPrimitiveDigis}
-path emuldtf = {valDttfDigis}
-#path emulrpc = {valRpcTriggerDigis}
-path emulgmt = {valGmtDigis}
-path emulglt = {valGtDigis}
+#unpacking
+//path unpketp = {ecalDigis}
+//path unpkhtp = {hcalDigis}
+//path unpkgct = {gctDigis}
+//path unpkctp = {muonCSCDigis}
+//path unpkctf = {csctfDigis}
+//path unpkdtp = {muonDTDigis}
+//path unpkdtf = {dttfDigis}
+//path unpkrpc = {muonRPCDigis}
+//path unpkglt = {gtDigis}
 
-#extract further products for comparison
-path prodMon = {muonDtMon, muonCscMon}
-
-#comparator
-replace l1compare.COMPARE_COLLS= { 1,1,1,1, 1,1,1,1,0, 0,1,1 }
-#key {ETP,HTP,RCT,GCT, DTP,DTF,CTP,CTF,RPC, LTC,GMT,GT}
-path emulcmp = {l1compare }
+#emulation
+//path emuletp = {valEcalTriggerPrimitiveDigis}
+//path emulhtp = {valHcalTriggerPrimitiveDigis}
+//path emulrct = {maskedRctInputDigis, valRctDigis}
+//path emulgct = {valGctDigis}
+//path emulctp = {valCscTriggerPrimitiveDigis}
+//path emulctf = {valCsctfTrackDigis, valCsctfDigis}
+//path emuldtp = {valDtTriggerPrimitiveDigis}
+//path emuldtf = {valDttfDigis}
+//path emulrpc = {valRpcTriggerDigis}
+//path emulgmt = {valGmtDigis}
+//path emulglt = {valGtDigis}
+//path prodMon = {muonDtMon, muonCscMon}
 
 #dqm
-path dqmana = {l1demon, l1demonecal, l1tderct}
+//path dqmana = {l1demon, l1demonecal, l1tderct}
