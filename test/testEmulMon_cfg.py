@@ -5,6 +5,18 @@ process = cms.Process("TEST")
 process.load("DQMServices.Core.DQM_cfg")
 
 process.load("DQM/L1TMonitor/L1TEmulatorMonitor_cff")
+process.GlobalTag.globaltag = 'CRUZET4_V5P::All'
+process.GlobalTag.connect = 'frontier://FrontierProd/CMS_COND_21X_GLOBALTAG'
+process.l1compare.DumpMode = -1
+#process.l1compare.VerboseFlag = 1
+#process.l1demon.VerboseFlag = -1
+#process.l1demonecal.VerboseFlag = -1
+#process.l1demongct.VerboseFlag = -1
+process.l1tderct.verbose = False
+process.l1demon.disableROOToutput = False
+process.l1demonecal.disableROOToutput = False
+#process.l1demongct.disableROOToutput = False
+#process.l1tderct.disableROOToutput = False
 
 process.maxEvents = cms.untracked.PSet(
     input = cms.untracked.int32(1)
