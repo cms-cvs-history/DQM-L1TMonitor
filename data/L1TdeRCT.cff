@@ -1,6 +1,0 @@
-# RCT data comes from GCT readout
-include "DQM/L1TMonitor/data/L1TGCT_unpack.cff"
-include "DQM/L1TMonitor/data/L1TdeRCT.cfi"
-
-
-path l1tderctpath = {l1GctHwDigis, l1tderct}

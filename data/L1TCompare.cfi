@@ -1,8 +1,0 @@
-      module l1tcompare = L1TCompare {
-         untracked bool DQMStore = true
-         untracked bool verbose = true
-	 untracked bool disableROOToutput = true
-         InputTag gctSource = l1GctHwDigis::DQM
-         InputTag ecalTpgSource = ecalTriggerPrimitiveDigis
-	 InputTag rctSource = l1GctHwDigis::DQM
-      }      

@@ -1,8 +1,0 @@
-
-       module l1tgmt = L1TGMT{
-          untracked bool verbose = false
-          untracked bool DQMStore = true
-	  untracked bool disableROOToutput = true
-          InputTag gmtSource = l1GtUnpack::DQM
-        }
-
