@@ -1,9 +1,0 @@
-
-       module l1trpctf = L1TRPCTF{
-          untracked bool verbose = false
-          untracked bool DQMStore = true
-	  untracked bool disableROOToutput = true
-          InputTag rpctfSource = l1GtUnpack::DQM
-          InputTag rpctfRPCDigiSource = rpcunpacker::DQM
-        }
-

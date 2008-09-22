@@ -1,7 +1,0 @@
-include "DQM/L1TMonitor/data/L1TCSCTF.cfi"
-include "L1Trigger/CSCCommonTrigger/data/CSCCommonTrigger.cfi"
-
-
-
-
-

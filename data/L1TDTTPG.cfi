@@ -1,8 +1,0 @@
-
-       module l1tdttpg = L1TDTTPG{
-          untracked bool verbose = false
-          untracked bool DQMStore = true
-	  untracked bool disableROOToutput = true
-          InputTag dttpgSource = l1tdttpgunpack::DQM
-        }
-

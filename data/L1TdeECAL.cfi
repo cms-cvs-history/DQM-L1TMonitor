@@ -1,8 +1,0 @@
-module l1demonecal = L1TdeECAL {
-    InputTag DataEmulCompareSource = l1compare
-    untracked bool verbose = false
-    untracked bool DQMStore = true
-    untracked bool disableROOToutput = true
-    untracked string HistFile ="./L1TDQM.root"
-    untracked string HistFolder = "L1TEMU/xpert/Ecal/"    
-}
