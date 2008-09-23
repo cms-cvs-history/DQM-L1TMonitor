@@ -7,7 +7,9 @@ process.load("DQMServices.Core.DQM_cfg")
 process.load("DQM/L1TMonitor/L1TEmulatorMonitor_cff")
 process.GlobalTag.globaltag = 'CRUZET4_V5P::All'
 process.GlobalTag.connect = 'frontier://FrontierProd/CMS_COND_21X_GLOBALTAG'
-process.l1compare.DumpMode = -1
+# ETP,HTP,RCT,GCT, DTP,DTF,CTP,CTF,RPC, LTC,GMT,GLT 
+#process.l1compare.COMPARE_COLLS = [0,0,0,0, 0,0,1,0,0, 0,0,0]
+#process.l1compare.DumpMode = -1
 #process.l1compare.VerboseFlag = 1
 #process.l1demon.VerboseFlag = -1
 #process.l1demonecal.VerboseFlag = -1
@@ -18,11 +20,15 @@ process.l1demonecal.disableROOToutput = False
 #process.l1demongct.disableROOToutput = False
 #process.l1tderct.disableROOToutput = False
 
+#process.l1demon.RunInFilterFarm=True
+
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(1)
+    input = cms.untracked.int32(100)
 )
 process.source = cms.Source("PoolSource",
-    fileNames = cms.untracked.vstring('/store/data/GlobalCruzet1/A/000/000/000/RAW/0003/00ECEA7A-901B-DD11-A23C-000423D98868.root')
+    fileNames = cms.untracked.vstring(
+'/store/data/BeamCommissioning08/Cosmics/RAW/v1/000/063/136/A444AFCA-6085-DD11-87F3-000423D987E0.root'
+    )
 )
 
 process.outputEvents = cms.OutputModule("PoolOutputModule",
