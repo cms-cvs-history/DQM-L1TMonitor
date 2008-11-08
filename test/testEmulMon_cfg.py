@@ -4,15 +4,11 @@ process = cms.Process("TEST")
 
 process.load("DQMServices.Core.DQM_cfg")
 process.load("DQM/L1TMonitor/L1TEmulatorMonitor_cff")
-#off-line
-process.GlobalTag.globaltag = 'CRAFT_V2P::All'
+process.GlobalTag.globaltag = 'CRUZET4_V5P::All'
 process.GlobalTag.connect = 'frontier://FrontierProd/CMS_COND_21X_GLOBALTAG'
-#on-line
-#process.GlobalTag.globaltag = 'CRAFT_V2H::All'
-#process.GlobalTag.connect = 'frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG'
+# ETP,HTP,RCT,GCT, DTP,DTF,CTP,CTF,RPC, LTC,GMT,GLT 
 
-#ETP,HTP,RCT,GCT, DTP,DTF,CTP,CTF,RPC, LTC,GMT,GLT 
-#process.l1compare.COMPARE_COLLS = [0,0,0,1, 0,0,0,0,0, 0,1,0]
+#process.l1compare.COMPARE_COLLS = [0,0,0,0, 0,0,0,0,1, 0,1,0]
 #process.l1compare.DumpMode = -1
 #process.l1compare.VerboseFlag = 1
 #process.l1demon.VerboseFlag = 1
