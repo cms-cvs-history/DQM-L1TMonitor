@@ -1,5 +1,0 @@
-include "DQM/L1TMonitor/data/L1TGT.cff"
-include "DQM/L1TMonitor/data/L1TRPCTF.cff"
-include "DQM/L1TMonitor/data/L1TCSCTF.cff"
-include "DQM/L1TMonitor/data/L1TDTTF.cff"
-include "DQM/L1TMonitor/data/L1TGMT.cff"
