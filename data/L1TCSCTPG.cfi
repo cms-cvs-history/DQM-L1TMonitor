@@ -1,8 +1,0 @@
-
-       module l1tcsctpg = L1TCSCTPG{
-          untracked bool verbose = false
-          untracked bool DQMStore = true
-	  untracked bool disableROOToutput = true
-          InputTag csctpgSource = muonCSCDigis:MuonCSCCorrelatedLCTDigi:DQM
-        }
-

@@ -1,8 +1,0 @@
-
-       module l1trpctpg = L1TRPCTPG{
-          untracked bool verbose = false
-          untracked bool DQMStore = true
-	  untracked bool disableROOToutput = true
-          InputTag rpctpgSource = rpcunpacker::DQM
-        }
-

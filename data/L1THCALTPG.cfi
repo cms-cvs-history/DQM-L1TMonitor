@@ -1,8 +1,0 @@
-
-       module l1thcaltpg = L1THCALTPG{
-          untracked bool verbose = false
-          untracked bool DQMStore = true
-	  untracked bool disableROOToutput = true
-          InputTag hcaltpgSource = hcalDigis::DQM
-        }
-

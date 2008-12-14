@@ -1,9 +1,0 @@
-
-       module l1tgt = L1TGT{
-          untracked bool verbose = false
-          untracked bool DQMStore = true
-	  untracked bool disableROOToutput = true
-          InputTag gtSource = l1GtUnpack::DQM
-          InputTag gtEvmSource = l1GtEvmUnpack::DQM
-        }
-

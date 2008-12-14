@@ -1,9 +1,0 @@
-       module l1thcaltpgxana = L1THCALTPGXAna{
-          untracked bool verbose = false
-          untracked bool DQMStore = true
-          untracked double fakeCut = 5.0
-          InputTag hcaltpgSource = hcalDigis::DQM
-          InputTag hbherecoSource = hbhereco::DQM
-          InputTag hfrecoSource = hfreco::DQM
-        }
-

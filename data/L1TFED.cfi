@@ -1,7 +1,0 @@
-
-       module l1tfed = L1TFED{
-          untracked bool verbose = false
-          untracked bool DQMStore = true
-	  untracked bool disableROOToutput = true
-        }
-
