@@ -28,7 +28,7 @@ process.load("DQM.L1TMonitorClient.L1TRPCTFClient_cff")
 process.load("DQM.L1TMonitor.L1TRPCTF_cff")
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(-1)
+    input = cms.untracked.int32(15000)
 )
 
 #process.source = cms.Source("NewEventStreamFileReader",
@@ -47,7 +47,7 @@ process.source = cms.Source("PoolSource",
 )
 
 process.l1trpctf.rpctfSource = cms.InputTag("gtDigis")
-process.l1trpctf.rateUpdateTime = cms.int32(-1) # update at end of run
+process.l1trpctf.rateUpdateTime = cms.int32(20) # -1 update at end of run
 
 
 
