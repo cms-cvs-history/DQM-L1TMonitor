@@ -63,6 +63,6 @@ process.dqmSaver.convention = 'Online'
 process.dqmSaver.dirName = '.'
 process.dqmSaver.producer = 'DQM'
 process.dqmEnv.subSystemFolder = 'L1T'
-process.l1trpctfClient.verbose = True
+process.l1trpctfClient.verbose = False
 
 
