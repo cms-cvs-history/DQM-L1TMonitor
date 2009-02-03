@@ -4,9 +4,13 @@ process = cms.Process("TEST")
 
 process.load("DQMServices.Core.DQM_cfg")
 process.load("DQM/L1TMonitor/L1TEmulatorMonitor_cff")
+
+process.load("Configuration.StandardSequences.Geometry_cff")
+#process.load("L1Trigger.Configuration.L1Config_cff")
+ 
 #off-line
-process.GlobalTag.globaltag = 'CRAFT_V2P::All'
-process.GlobalTag.connect = 'frontier://FrontierProd/CMS_COND_21X_GLOBALTAG'
+#process.GlobalTag.globaltag = 'CRAFT_V2P::All'
+#process.GlobalTag.connect = 'frontier://FrontierProd/CMS_COND_21X_GLOBALTAG'
 #on-line
 #process.GlobalTag.globaltag = 'CRAFT_V2H::All'
 #process.GlobalTag.connect = 'frontier://(proxyurl=http://localhost:3128)(serverurl=http://frontier1.cms:8000/FrontierOnProd)(serverurl=http://frontier2.cms:8000/FrontierOnProd)(retrieve-ziplevel=0)/CMS_COND_21X_GLOBALTAG'
@@ -26,7 +30,7 @@ process.l1demon.disableROOToutput = False
 #process.l1demon.RunInFilterFarm=True
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(200)
+    input = cms.untracked.int32(20)
 )
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(
