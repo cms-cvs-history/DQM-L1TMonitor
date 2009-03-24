@@ -35,6 +35,7 @@ process.maxEvents = cms.untracked.PSet(
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(
         "/store/data/Commissioning08/Cosmics/ALCARECO/CRAFT_V4P_StreamALCARECORpcCalHLT_v12/0024/36660505-DBAD-DD11-BB9A-000423D9517C.root"
+#         "/store/data/Commissioning08/Cosmics/ALCARECO/CRAFT_V4P_StreamALCARECORpcCalHLT_v12/0024/1A9E5171-98AD-DD11-8ADE-001617C3B6FE.root"
     )
 )
 
@@ -55,6 +56,6 @@ process.dqmSaver.convention = 'Online'
 process.dqmSaver.dirName = '.'
 process.dqmSaver.producer = 'DQM'
 process.dqmEnv.subSystemFolder = 'L1T'
-process.l1trpctfClient.verbose = False
+process.l1trpctfClient.verbose = True
 
 
