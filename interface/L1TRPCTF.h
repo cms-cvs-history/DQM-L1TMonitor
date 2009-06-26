@@ -4,8 +4,8 @@
 /*
  * \file L1TRPCTF.h
  *
- * $Date: 2008/06/05 12:36:26 $
- * $Revision: 1.10 $
+ * $Date: 2009/03/24 14:13:56 $
+ * $Revision: 1.18 $
  * \author J. Berryhill
  *
 */
@@ -32,7 +32,7 @@
 #include "DataFormats/L1GlobalMuonTrigger/interface/L1MuGMTCand.h"
 #include "DataFormats/L1GlobalMuonTrigger/interface/L1MuGMTExtendedCand.h"
 #include "DataFormats/L1GlobalMuonTrigger/interface/L1MuGMTReadoutCollection.h"
-
+#include "DQM/L1TMonitor/interface/L1TRateHelper.h"
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -66,39 +66,42 @@ void beginLuminosityBlock(const edm::LuminosityBlock& lumiSeg,
                           const edm::EventSetup& context);
 void endLuminosityBlock(const edm::LuminosityBlock& lumiSeg, 
                         const edm::EventSetup& c);
+                        
+void endRun(const edm::Run & r, const edm::EventSetup & c);
 
 
 private:
+  void fillRateHistos(int orbit, bool flush=false);
 
-  void fillNorm(); /// fills  normalized histograms
-
+  
   // ----------member data ---------------------------
-  DQMStore * dbe;
+  DQMStore * m_dbe;
 
   MonitorElement* rpctfetavalue[3];
   MonitorElement* rpctfphivalue[3];
   MonitorElement* rpctfptvalue[3];
   MonitorElement* rpctfchargevalue[3];
   MonitorElement* rpctfquality[3];
-  MonitorElement* rpctfntrack;
+  MonitorElement* rpctfntrack_b[3];
+  MonitorElement* rpctfntrack_e[3];
   MonitorElement* rpctfbx;
-//   MonitorElement*  m_digiBx;
-//   MonitorElement*  m_digiBxLast;
-  MonitorElement* m_qualVsEta;
-  MonitorElement* m_muonsEtaPhi;
-  MonitorElement* m_phipacked;
-  MonitorElement * m_phipackednorm;
-  MonitorElement * m_muonsEtaPhiNorm;
-//   MonitorElement * m_floatSynchro;
+  MonitorElement* m_qualVsEta[3];
+  MonitorElement* m_muonsEtaPhi[3];
+  //MonitorElement* m_phipacked;
+  
+  MonitorElement * m_rateAvg;
+  MonitorElement * m_rateMin;
+  MonitorElement * m_rateMax;
+  MonitorElement* m_bxDiff;
+  MonitorElement* rpctfcratesynchro[12];
+  std::set<unsigned int>  m_globBX;
+  
+  
+  L1TRateHelper::L1TRateHelper m_rateHelper;
 
-//   MonitorElement *  m_digiBxRPC;
-// 
-//   MonitorElement *  m_digiBxDT;
-// 
-//   MonitorElement *  m_digiBxCSC;
 
   edm::InputTag rpctfSource_ ;
-  //edm::InputTag digiSource_ ;
+
   int nev_; // Number of events processed
   int nevRPC_; // Number of events processed where muon was found by rpc trigger
   std::string outputFile_; //file name for ROOT ouput
@@ -106,15 +109,14 @@ private:
   bool monitorDaemon_;
   //bool m_rpcDigiFine;
   //bool m_useRpcDigi;
-  
-  unsigned long m_ntracks;
-  
-  ofstream logFile_;
 
+  int m_rateUpdateTime;
+  int m_rateBinSize;
+  int m_rateNoOfBins;
+  int m_lastUsedBxInBxdiff;
+  std::string output_dir_;
+  struct BxDelays { int bx, eta_t, phi_p; };  
 
-//   std::set<int> m_bxs;
-//   int m_rpcDigiWithBX0;
-//   int m_rpcDigiWithBXnon0;
 
 };
 

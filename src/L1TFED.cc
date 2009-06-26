@@ -1,8 +1,8 @@
 /*
  * \file L1TFED.cc
  *
- * $Date: 2008/10/06 13:16:44 $
- * $Revision: 1.8 $
+ * $Date: 2008/10/06 14:33:22 $
+ * $Revision: 1.9 $
  * \author J. Berryhill
  *
  */
@@ -21,7 +21,7 @@ L1TFED::L1TFED(const ParameterSet& ps)
 
   // verbosity switch
   verbose_ = ps.getUntrackedParameter<bool>("verbose", false);
-
+  rawl_  = ps.getParameter< InputTag >("rawTag");
   if(verbose_) cout << "L1TFED: constructor...." << endl;
 
 
@@ -112,10 +112,10 @@ void L1TFED::analyze(const Event& e, const EventSetup& c)
   if(verbose_) cout << "L1T FED Integrity: analyze...." << endl;
 
   edm::Handle<FEDRawDataCollection> rawdata;
-  bool t = e.getByType(rawdata);
+  bool t = e.getByLabel(rawl_,rawdata);
   
   if ( ! t ) {
-     LogDebug("Product") << "can't find FEDRawDataCollection ";
+    if(verbose_) cout << "can't find FEDRawDataCollection "<< endl;
   }
   
   else {
