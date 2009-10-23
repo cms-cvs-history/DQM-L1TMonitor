@@ -18,7 +18,7 @@ process.GlobalTag.globaltag = 'GR09_P_V1::All'
 
 
 #ETP,HTP,RCT,GCT, DTP,DTF,CTP,CTF,RPC, LTC,GMT,GLT 
-process.l1compare.COMPARE_COLLS = [0,0,0,0, 0,0,0,1,0, 0,0,0]
+#process.l1compare.COMPARE_COLLS = [0,0,0,0, 0,0,0,1,0, 0,0,0]
 process.l1compare.DumpMode = -1
 process.l1compare.VerboseFlag = 1
 process.l1demon.VerboseFlag = 1
