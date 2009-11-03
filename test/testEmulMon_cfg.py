@@ -34,10 +34,14 @@ process.l1tderct.disableROOToutput = False
 process.maxEvents = cms.untracked.PSet(
     input = cms.untracked.int32(100)
 )
+
+##to access new runs in castor, use dbs eg (specify desired run number in 'run=')
+##https://cmsweb.cern.ch/dbs_discovery/getLFN_txt?dbsInst=cms_dbs_prod_global&blockName=*&dataset=/Cosmics/Commissioning09-v3/RAW&userMode=user&run=118969&what=cff
+#check rfdir /castor/cern.ch/cms/store/data/Commissioning09/Cosmics/RAW/v3/000/118/969/FEA12E2E-EEC5-DE11-8BD0-000423D98C20.root
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(
     #'file:file_craft09_fevt_110998.root'
-    '/store/express/CRAFT09/ExpressMuon/FEVT/v1/000/110/998/FEF63450-1B8A-DE11-8102-000423D987FC.root'
+    '/store/data/Commissioning09/Cosmics/RAW/v3/000/118/969/FEA12E2E-EEC5-DE11-8BD0-000423D98C20.root'
     )
 )
 
