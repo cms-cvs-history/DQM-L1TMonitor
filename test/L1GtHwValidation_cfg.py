@@ -34,7 +34,7 @@ else :
     
     if useRelease == latestRelease :
         #useGlobalTag = 'CRAFT0831X_V1'
-        useGlobalTag = 'GR09_31X_V4P'
+        useGlobalTag = 'GR09_P_V6'
     
         # data type
         dataType = 'RAW'
@@ -207,7 +207,7 @@ else :
         # data POOL
         dataset = cms.untracked.vstring('/Cosmics/Commissioning09-v3/RAW')
         readFiles.extend( [
-                '/store/data/Commissioning09/Cosmics/RAW/v3/000/105/847/6A699BB9-2072-DE11-995B-001D09F34488.root'
+                '/store/data/BeamCommissioning09/Cosmics/RAW/v1/000/121/560/DC089E4B-5ED4-DE11-A179-000423D98FBC.root'
         
             ] );
 
@@ -221,6 +221,8 @@ else :
         
             ] );
 
+    process.valGtDigis.AlternativeNrBxBoardDaq = 0x101
+    process.valGtDigis.AlternativeNrBxBoardEvm = 0x2
 
 if useLocalFiles :
     readFiles = 'file:/afs/cern.ch/user/g/ghete/scratch0/CmsswTestFiles/l1GtHwValidation_source.root'
