@@ -35,7 +35,7 @@ class L1TdeECAL : public edm::EDAnalyzer {
 
  protected:
 
-  virtual void beginJob(const edm::EventSetup&) ;
+  virtual void beginJob() ;
   virtual void analyze(const edm::Event&, const edm::EventSetup&);
   virtual void endJob() ;
 

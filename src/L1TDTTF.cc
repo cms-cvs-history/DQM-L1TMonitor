@@ -1,11 +1,14 @@
 /*
  * \file L1TDTTF.cc
  *
- * $Date: 2008/06/10 18:01:55 $
- * $Revision: 1.15 $
+ * $Date: 2008/07/29 14:18:27 $
+ * $Revision: 1.19 $
  * \author J. Berryhill
  *
  * $Log: L1TDTTF.cc,v $
+ * Revision 1.19  2008/07/29 14:18:27  wteo
+ * updated and added more MEs
+ *
  * Revision 1.15  2008/06/10 18:01:55  lorenzo
  * reduced n histos
  *
@@ -39,6 +42,9 @@
  * DQM core migration.
  *
  * $Log: L1TDTTF.cc,v $
+ * Revision 1.19  2008/07/29 14:18:27  wteo
+ * updated and added more MEs
+ *
  * Revision 1.15  2008/06/10 18:01:55  lorenzo
  * reduced n histos
  *
@@ -164,7 +170,7 @@ L1TDTTF::~L1TDTTF()
 {
 }
 
-void L1TDTTF::beginJob(const EventSetup& c)
+void L1TDTTF::beginJob()
 {
 
   nev_ = 0;

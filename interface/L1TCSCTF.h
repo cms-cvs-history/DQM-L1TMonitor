@@ -4,8 +4,8 @@
 /*
  * \file L1TCSCTF.h
  *
- * $Date: 2008/04/23 16:30:13 $
- * $Revision: 1.8 $
+ * $Date: 2008/10/20 14:29:09 $
+ * $Revision: 1.12 $
  * \author J. Berryhill
  *
 */
@@ -60,7 +60,7 @@ protected:
 void analyze(const edm::Event& e, const edm::EventSetup& c);
 
 // BeginJob
-void beginJob(const edm::EventSetup& c);
+void beginJob();
 
 // EndJob
 void endJob(void);

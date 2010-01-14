@@ -1,11 +1,14 @@
 /*
  * \file L1TGCT.cc
  *
- * $Date: 2009/11/02 17:00:05 $
- * $Revision: 1.44 $
+ * $Date: 2009/11/02 22:30:27 $
+ * $Revision: 1.45 $
  * \author J. Berryhill
  *
  * $Log: L1TGCT.cc,v $
+ * Revision 1.45  2009/11/02 22:30:27  tapper
+ * Err that'll teach me to test it properly.... fixed a bug in the HF ring histograms.
+ *
  * Revision 1.44  2009/11/02 17:00:05  tapper
  * Changes to L1TdeGCT (to include energy sums), to L1TDEMON (should not make any difference now) and L1TGCT to add multiple BXs.
  *
@@ -240,7 +243,7 @@ L1TGCT::~L1TGCT()
 {
 }
 
-void L1TGCT::beginJob(const edm::EventSetup & c)
+void L1TGCT::beginJob()
 {
 
   nev_ = 0;

@@ -4,8 +4,8 @@
 /*
  * \file L1TGMT.h
  *
- * $Date: 2008/04/25 15:38:47 $
- * $Revision: 1.7 $
+ * $Date: 2010/01/13 13:04:58 $
+ * $Revision: 1.10 $
  * \author J. Berryhill, I. Mikulec
  *
 */
@@ -56,7 +56,7 @@ protected:
 void analyze(const edm::Event& e, const edm::EventSetup& c);
 
 // BeginJob
-void beginJob(const edm::EventSetup& c);
+void beginJob(void);
 
 // EndJob
 void endJob(void);
@@ -118,6 +118,8 @@ private:
   int trsrc_old_; // code of trigger source ( bits: 0 DT, 1 bRPC, 2 CSC, 3 fRPC )
 
   static const double piconv_;
+  double phiconv_(float phi);
+  void book_(const edm::EventSetup& c);
 };
 
 #endif
