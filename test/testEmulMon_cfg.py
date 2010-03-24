@@ -10,7 +10,7 @@ process.load("Configuration.StandardSequences.Geometry_cff")
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 
 #off-line
-process.GlobalTag.globaltag = 'GR10_P_V2::All'
+process.GlobalTag.globaltag = 'GR10_P_V4::All'
 
 #ETP,HTP,RCT,GCT, DTP,DTF,CTP,CTF,RPC, LTC,GMT,GLT 
 #process.l1compare.COMPARE_COLLS = [0,0,0,0, 0,0,0,1,0, 0,0,0]
@@ -28,15 +28,16 @@ process.l1tderct.disableROOToutput = False
 #process.l1demon.RunInFilterFarm=True
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(1000)
+    input = cms.untracked.int32(100)
 )
+
 
 ##to access new runs in castor, use dbs eg (specify desired run number in 'run=')
 ##https://cmsweb.cern.ch/dbs_discovery/getLFN_txt?dbsInst=cms_dbs_prod_global&blockName=*&dataset=/Cosmics/Commissioning09-v3/RAW&userMode=user&run=118969&what=cff
 #check rfdir /castor/cern.ch/cms/store/data/Commissioning09/Cosmics/RAW/v3/000/118/969/FEA12E2E-EEC5-DE11-8BD0-000423D98C20.root
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(
-    '/store/data/Commissioning10/Cosmics/RAW/v3/000/127/336/F6903CB5-A816-DF11-B5EA-0030487A3C9A.root'
+    '/store/data/Commissioning10/Cosmics/RAW/v4/000/131/872/4CE9AD33-C736-DF11-B9D7-000423D952C0.root'
     )
 )
 
