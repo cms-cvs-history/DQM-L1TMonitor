@@ -1,6 +1,8 @@
 import FWCore.ParameterSet.Config as cms
 
-# Take defaults except unpack 5 BXs for monitoring - A. Tapper 2 April 2010
+# relevant FED is 745
+# if the default source gets updated then we can get rid of this
+# cff file and just point at the original one
 from EventFilter.GctRawToDigi.l1GctHwDigis_cfi import *
-l1GctHwDigis.numberOfGctSamplesToUnpack = cms.uint32(5)
+l1GctHwDigis.inputLabel = 'source'
 

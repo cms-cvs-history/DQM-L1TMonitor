@@ -75,14 +75,12 @@ L1TdeGCT::beginJob(void) {
     const double rnkMinim = 0.5;
     const double rnkMaxim = 63.5;
 
-    sysrates = dbe->book1D("sysrates","RATE OF COMPARISON FAILURES",nGctColl_, 0, nGctColl_ );
+    sysrates = dbe->book1D("sysrates","sysrates",nGctColl_, 0, nGctColl_ );
 
     for(int j=0; j<2; j++) {
       std::string lbl("sysncand"); 
       lbl += (j==0?"Data":"Emul");
-      std::string title("GCT OBJECT MULTIPLICITY ");
-      title += (j==0?"(DATA)":"(EMULATOR)");
-      sysncand[j] = dbe->book1D(lbl.data(),title.data(),nGctColl_, 0, nGctColl_ );
+      sysncand[j] = dbe->book1D(lbl.data(),lbl.data(),nGctColl_, 0, nGctColl_ );
     }
     
     for(int j=0; j<nGctColl_; j++) {
@@ -90,53 +88,38 @@ L1TdeGCT::beginJob(void) {
       dbe->setCurrentFolder(std::string(histFolder_+cLabel[j]));
       
       std::string lbl("");
-      std::string title("");
       lbl.clear();
-      title.clear();
       lbl+=cLabel[j];lbl+="ErrorFlag"; 
-      title+=cLabel[j];title+=" ErrorFlag"; 
-      errortype[j] = dbe->book1D(lbl.data(),title.data(), nerr, 0, nerr);
+      errortype[j] = dbe->book1D(lbl.data(),lbl.data(), nerr, 0, nerr);
       
       lbl.clear();
-      title.clear();
       lbl+=cLabel[j];lbl+="Eta"; 
-      title+=cLabel[j];title+=" ETA OF COMPARISON FAILURES"; 
-      eta[j] = dbe->book1D(lbl.data(),title.data(),
+      eta[j] = dbe->book1D(lbl.data(),lbl.data(),
 			   etaNBins, etaMinim, etaMaxim);
       lbl.clear();
-      title.clear();
       lbl+=cLabel[j];lbl+="Phi"; 
-      title+=cLabel[j];title+=" PHI OF COMPARISON FAILURES"; 
-      phi[j] = dbe->book1D(lbl.data(),title.data(),
+      phi[j] = dbe->book1D(lbl.data(),lbl.data(),
 			   phiNBins, phiMinim, phiMaxim);
 
       lbl.clear();
-      title.clear();
       lbl+=cLabel[j];lbl+="Etaphi"; 
-      title+=cLabel[j];title+=" ETA PHI OF COMPARISON FAILURES"; 
-      etaphi[j] = dbe->book2D(lbl.data(),title.data(), 
+      etaphi[j] = dbe->book2D(lbl.data(),lbl.data(), 
 			      etaNBins, etaMinim, etaMaxim,
 			      phiNBins, phiMinim, phiMaxim
 			      );
       //
       lbl.clear();
-      title.clear();
       lbl+=cLabel[j];lbl+="Eta"; lbl+="Data";
-      title+=cLabel[j];title+=" ETA (DATA)"; 
-      etaData[j] = dbe->book1D(lbl.data(),title.data(),
+      etaData[j] = dbe->book1D(lbl.data(),lbl.data(),
 			       etaNBins, etaMinim, etaMaxim);
       lbl.clear();
-      title.clear();
       lbl+=cLabel[j];lbl+="Phi";  lbl+="Data";
-      title+=cLabel[j];title+=" PHI (DATA)"; 
-      phiData[j] = dbe->book1D(lbl.data(),title.data(),
+      phiData[j] = dbe->book1D(lbl.data(),lbl.data(),
 			       phiNBins, phiMinim, phiMaxim);
 
       lbl.clear();
-      title.clear();
       lbl+=cLabel[j];lbl+="Rank";  lbl+="Data";
-      title+=cLabel[j];title+=" RANK (DATA)"; 
-      rnkData[j] = dbe->book1D(lbl.data(),title.data(),
+      rnkData[j] = dbe->book1D(lbl.data(),lbl.data(),
 			       rnkNBins, rnkMinim, rnkMaxim);
       lbl.clear();
       lbl+=cLabel[j];lbl+="Dword"; 
@@ -172,13 +155,13 @@ L1TdeGCT::beginJob(void) {
   }
   
   for(int i=0; i<nGctColl_; i++) {
-    etaphi [i]->setAxisTitle("GCT #eta",1);
-    etaphi [i]->setAxisTitle("GCT #phi",2);
-    eta    [i]->setAxisTitle("GCT #eta");
-    phi    [i]->setAxisTitle("GCT #phi");
-    etaData[i]->setAxisTitle("GCT #eta");
-    phiData[i]->setAxisTitle("GCT #phi");
-    rnkData[i]->setAxisTitle("Rank");
+    etaphi [i]->setAxisTitle("eta",1);
+    etaphi [i]->setAxisTitle("phi",2);
+    eta    [i]->setAxisTitle("eta");
+    phi    [i]->setAxisTitle("phi");
+    etaData[i]->setAxisTitle("eta");
+    phiData[i]->setAxisTitle("phi");
+    rnkData[i]->setAxisTitle("rank");
     dword  [i]->setAxisTitle("trigger data word bit");
     eword  [i]->setAxisTitle("trigger data word bit");
     deword [i]->setAxisTitle("trigger data word bit");
