@@ -47,7 +47,6 @@ process.load("CondCore.DBCommon.CondDBSetup_cfi")
 
 process.load("DQM/L1TMonitor/L1TMonitor_cff")
 
-process.DQMStore.verbose = 0
 process.DQM.collectorHost = "srv-c2d05-12"
 process.DQM.collectorPort = 9190
 
